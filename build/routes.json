@@ -32220,6 +32220,35 @@
     "name": "IMDb",
     "url": "www.imdb.com"
   },
+  "imhcg": {
+    "routes": {
+      "/": {
+        "path": "/",
+        "categories": [
+          "blog"
+        ],
+        "view": 5,
+        "example": "/imhcg",
+        "parameters": {},
+        "radar": [
+          {
+            "source": [
+              "infos.imhcg.cn"
+            ]
+          }
+        ],
+        "name": "Engineering blogs",
+        "maintainers": [
+          "ZiHao256"
+        ],
+        "url": "https://infos.imhcg.cn/",
+        "location": "blog.ts"
+      }
+    },
+    "name": "imhcg的信息站",
+    "url": "infos.imhcg.cn",
+    "description": "包含多种技术和新闻信息的网站"
+  },
   "imiker": {
     "routes": {
       "/ask/jinghua": {
@@ -51093,6 +51122,77 @@
     "name": "QuestMobile",
     "url": "questmobile.com.cn"
   },
+  "questn": {
+    "routes": {
+      "/community/:communityUrl": {
+        "path": "/community/:communityUrl",
+        "name": "Community Events",
+        "url": "app.questn.com",
+        "maintainers": [
+          "cxheng315"
+        ],
+        "example": "/questn/community/gmnetwork",
+        "parameters": {
+          "community_url": "Community URL"
+        },
+        "categories": [
+          "other"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "app.questn.com/:communityUrl"
+            ],
+            "target": "/community/:communityUrl"
+          }
+        ],
+        "location": "community.ts"
+      },
+      "/events/:filter?": {
+        "path": "/events/:filter?",
+        "name": "Events",
+        "url": "app.questn.com",
+        "maintainers": [
+          "cxheng315"
+        ],
+        "example": "/questn/events",
+        "parameters": {
+          "filter": "Filter string"
+        },
+        "description": "\n:::tip\n\nFilter parameters:\n- category: 100: trending, 200: newest, 300: top\n- status_filter: 0: all, 100: available, 400: missed\n- community_filter: 0: all community, 100: verified, 200: followed\n- rewards_filter: 0: all rewards, 100: nft, 200: token, 400: whitelist\n- chain_filter: 0: all chains, 1: ethereum, 56: bsc, 137: polygon, 42161: arb, 10: op, 324: zksync, 43114: avax\n- search: 'Search keyword',\n- count: 'Number of events to fetch',\n- page: 'Page number',\n:::",
+        "categories": [
+          "other"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "app.questn.com/explore"
+            ],
+            "target": "/events/:category?/:status_filter?/:community_filter?/:reward_filter?/:chain_filter?/:search?/:count?/:page?"
+          }
+        ],
+        "location": "events.ts"
+      }
+    },
+    "name": "QuestN",
+    "url": "app.questn.com"
+  },
   "quicker": {
     "routes": {
       "/qa/:category?/:state?": {
@@ -53412,6 +53512,72 @@
         ],
         "url": "www2.scut.edu.cn/graduate/14562/list.htm",
         "location": "yjs.ts"
+      },
+      "/gzic/media": {
+        "path": "/gzic/media",
+        "categories": [
+          "university"
+        ],
+        "example": "/scut/gzic/media",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "广州国际校区 - 媒体报道",
+        "maintainers": [
+          "gdzhht"
+        ],
+        "description": ":::warning\n由于学校网站对非大陆 IP 的访问存在限制，可能需自行部署。\n:::",
+        "location": "gzic/media.ts"
+      },
+      "/gzic/news": {
+        "path": "/gzic/news",
+        "categories": [
+          "university"
+        ],
+        "example": "/scut/gzic/news",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "广州国际校区 - 新闻聚焦",
+        "maintainers": [
+          "gdzhht"
+        ],
+        "description": ":::warning\n由于学校网站对非大陆 IP 的访问存在限制，可能需自行部署。\n:::",
+        "location": "gzic/news.ts"
+      },
+      "/gzic/notice/:category?": {
+        "path": "/gzic/notice/:category?",
+        "categories": [
+          "university"
+        ],
+        "example": "/scut/gzic/notice/swtz",
+        "parameters": {
+          "category": "通知分类，默认为 `swtz`"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "广州国际校区 - 通知公告",
+        "maintainers": [
+          "gdzhht"
+        ],
+        "description": "| 学术预告 | 教研通知 | 海外学习 | 事务通知 |\n  | -------- | -------- | -------- | -------- |\n  | xsyg     | jytz     | hwxx     | swtz     |\n\n:::warning\n由于学校网站对非大陆 IP 的访问存在限制，可能需自行部署。\n部分通知详情页可能会被删除（返回 404），或在校园网外无法访问。\n:::",
+        "location": "gzic/notice.ts"
       },
       "/jwc/news": {
         "path": "/jwc/news",
@@ -59470,17 +59636,26 @@
         "description": "类型\n\n  | IPO | 再融资 | 重大资产重组 |\n  | --- | ------ | ------------ |\n  | 1   | 2      | 3            |\n\n  阶段\n\n  | 全部 | 受理 | 问询 | 上市委会议 |\n  | ---- | ---- | ---- | ---------- |\n  | 0    | 10   | 20   | 30         |\n\n  | 提交注册 | 注册结果 | 中止 | 终止 |\n  | -------- | -------- | ---- | ---- |\n  | 35       | 40       | 50   | 60   |\n\n  状态\n\n  | 全部 | 新受理 | 已问询 | 通过 | 未通过 |\n  | ---- | ------ | ------ | ---- | ------ |\n  | 0    | 20     | 30     | 45   | 44     |\n\n  | 暂缓审议 | 复审通过 | 复审不通过 | 提交注册 |\n  | -------- | -------- | ---------- | -------- |\n  | 46       | 56       | 54         | 60       |\n\n  | 注册生效 | 不予注册 | 补充审核 | 终止注册 |\n  | -------- | -------- | -------- | -------- |\n  | 70       | 74       | 78       | 76       |\n\n  | 中止 | 审核不通过 | 撤回 |\n  | ---- | ---------- | ---- |\n  | 80   | 90         | 95   |",
         "location": "projectdynamic.ts"
       },
-      "/rule": {
-        "path": "/rule",
+      "/rule/:channel{.+}?": {
+        "path": "/rule/:channel{.+}?",
+        "name": "本所业务规则",
+        "url": "www.szse.cn",
+        "maintainers": [
+          "nczitzk"
+        ],
+        "example": "/szse/rule/allrules/bussiness",
+        "parameters": {
+          "channel": "频道，默认为 `allrules/bussiness`，即全部业务规则，可在对应频道页 URL 中找到"
+        },
+        "description": ":::tip\n  若订阅 [综合类](https://www.szse.cn/www/lawrules/rule/all/index.html)，网址为 `https://www.szse.cn/www/lawrules/rule/all/index.html`。截取 `https://www.szse.cn/www/lawrules/rule/` 到末尾 `/index.html` 的部分 `all` 作为参数填入，此时路由为 [`/szse/rule/all`](https://rsshub.app/szse/rule/all)。\n  :::\n\n  | 频道                                                                        | ID                                                    |\n  | --------------------------------------------------------------------------- | ----------------------------------------------------- |\n  | [综合类](https://www.szse.cn/www/lawrules/rule/all/index.html)              | [all](https://rsshub.app/szes/rule/all)               |\n  | [基础设施REITs类](https://www.szse.cn/www/lawrules/rule/reits/index.html)   | [reits](https://rsshub.app/szes/rule/reits)           |\n  | [衍生品类](https://www.szse.cn/www/lawrules/rule/derivative/index.html)     | [derivative](https://rsshub.app/szes/rule/derivative) |\n  | [会员管理类](https://www.szse.cn/www/lawrules/rule/memberty/index.html)     | [memberty](https://rsshub.app/szes/rule/memberty)     |\n  | [纪律处分与内部救济类](https://www.szse.cn/www/lawrules/rule/pr/index.html) | [pr](https://rsshub.app/szes/rule/pr)                 |\n\n  #### 股票类\n\n  | 频道                                                                                     | ID                                                                                    |\n  | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |\n  | [发行上市审核](https://www.szse.cn/www/lawrules/rule/stock/audit/index.html)             | [stock/audit](https://rsshub.app/szes/rule/stock/audit)                               |\n  | [发行承销](https://www.szse.cn/www/lawrules/rule/stock/issue/index.html)                 | [stock/issue](https://rsshub.app/szes/rule/stock/issue)                               |\n  | [通用](https://www.szse.cn/www/lawrules/rule/stock/supervision/currency/index.html)      | [stock/supervision/currency](https://rsshub.app/szes/rule/stock/supervision/currency) |\n  | [主板专用](https://www.szse.cn/www/lawrules/rule/stock/supervision/mb/index.html)        | [stock/supervision/mb](https://rsshub.app/szes/rule/stock/supervision/mb)             |\n  | [创业板专用](https://www.szse.cn/www/lawrules/rule/stock/supervision/chinext/index.html) | [stock/supervision/chinext](https://rsshub.app/szes/rule/stock/supervision/chinext)   |\n  | [交易](https://www.szse.cn/www/lawrules/rule/stock/trade/index.html)                     | [stock/trade](https://rsshub.app/szes/rule/stock/trade)                               |\n\n  #### 固收类\n\n  | 频道                                                                                 | ID                                                                            |\n  | ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------- |\n  | [发行上市（挂牌）](https://www.szse.cn/www/lawrules/rule/bond/bonds/list/index.html) | [bond/bonds/list](https://rsshub.app/szes/rule/bond/bonds/list)               |\n  | [持续监管](https://www.szse.cn/www/lawrules/rule/bond/bonds/supervision/index.html)  | [bond/bonds/supervision](https://rsshub.app/szes/rule/bond/bonds/supervision) |\n  | [交易](https://www.szse.cn/www/lawrules/rule/bond/bonds/trade/index.html)            | [bond/bonds/trade](https://rsshub.app/szes/rule/bond/bonds/trade)             |\n  | [资产支持证券](https://www.szse.cn/www/lawrules/rule/bond/abs/index.html)            | [bond/abs](https://rsshub.app/szes/rule/bond/abs)                             |\n\n  #### 基金类\n\n  | 频道                                                                | ID                                                    |\n  | ------------------------------------------------------------------- | ----------------------------------------------------- |\n  | [上市](https://www.szse.cn/www/lawrules/rule/fund/list/index.html)  | [fund/list](https://rsshub.app/szes/rule/fund/list)   |\n  | [交易](https://www.szse.cn/www/lawrules/rule/fund/trade/index.html) | [fund/trade](https://rsshub.app/szes/rule/fund/trade) |\n\n  #### 交易类\n\n  | 频道                                                                                     | ID                                                                                    |\n  | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |\n  | [通用](https://www.szse.cn/www/lawrules/rule/trade/current/index.html)                   | [trade/current](https://rsshub.app/szes/rule/trade/current)                           |\n  | [融资融券](https://www.szse.cn/www/lawrules/rule/trade/business/margin/index.html)       | [trade/business/margin](https://rsshub.app/szes/rule/trade/business/margin)           |\n  | [转融通](https://www.szse.cn/www/lawrules/rule/trade/business/refinancing/index.html)    | [trade/business/refinancing](https://rsshub.app/szes/rule/trade/business/refinancing) |\n  | [股票质押式回购](https://www.szse.cn/www/lawrules/rule/trade/business/pledge/index.html) | [trade/business/pledge](https://rsshub.app/szes/rule/trade/business/pledge)           |\n  | [质押式报价回购](https://www.szse.cn/www/lawrules/rule/trade/business/price/index.html)  | [trade/business/price](https://rsshub.app/szes/rule/trade/business/price)             |\n  | [约定购回](https://www.szse.cn/www/lawrules/rule/trade/business/promise/index.html)      | [trade/business/promise](https://rsshub.app/szes/rule/trade/business/promise)         |\n  | [协议转让](https://www.szse.cn/www/lawrules/rule/trade/business/transfer/index.html)     | [trade/business/transfer](https://rsshub.app/szes/rule/trade/business/transfer)       |\n  | [其他](https://www.szse.cn/www/lawrules/rule/trade/business/oth/index.html)              | [trade/business/oth](https://rsshub.app/szes/rule/trade/business/oth)                 |\n\n  #### 跨境创新类\n\n  | 频道                                                                          | ID                                                    |\n  | ----------------------------------------------------------------------------- | ----------------------------------------------------- |\n  | [深港通](https://www.szse.cn/www/lawrules/rule/inno/szhk/index.html)          | [inno/szhk](https://rsshub.app/szes/rule/inno/szhk)   |\n  | [试点创新企业](https://www.szse.cn/www/lawrules/rule/inno/pilot/index.html)   | [inno/pilot](https://rsshub.app/szes/rule/inno/pilot) |\n  | [H股全流通](https://www.szse.cn/www/lawrules/rule/inno/hc/index.html)         | [inno/hc](https://rsshub.app/szes/rule/inno/hc)       |\n  | [互联互通存托凭证](https://www.szse.cn/www/lawrules/rule/inno/gdr/index.html) | [inno/gdr](https://rsshub.app/szes/rule/inno/gdr)     |\n\n  #### 全部规则\n\n  | 频道                                                                                | ID                                                                    |\n  | ----------------------------------------------------------------------------------- | --------------------------------------------------------------------- |\n  | [全部业务规则](https://www.szse.cn/www/lawrules/rule/allrules/bussiness/index.html) | [allrules/bussiness](https://rsshub.app/szes/rule/allrules/bussiness) |\n  | [规则汇编下载](https://www.szse.cn/www/lawrules/rule/allrules/rulejoin/index.html)  | [allrules/rulejoin](https://rsshub.app/szes/rule/allrules/rulejoin)   |\n\n  #### 已废止规则\n\n  | 频道                                                                                 | ID                                                                      |\n  | ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |\n  | [规则废止公告](https://www.szse.cn/www/lawrules/rule/repeal/announcement/index.html) | [repeal/announcement](https://rsshub.app/szes/rule/repeal/announcement) |\n  | [已废止规则文本](https://www.szse.cn/www/lawrules/rule/repeal/rules/index.html)      | [repeal/rules](https://rsshub.app/szes/rule/repeal/rules)               |\n  ",
         "categories": [
           "finance"
         ],
-        "example": "/szse/rule",
-        "parameters": {},
         "features": {
           "requireConfig": false,
           "requirePuppeteer": false,
           "antiCrawler": false,
+          "supportRadar": true,
           "supportBT": false,
           "supportPodcast": false,
           "supportScihub": false
@@ -59488,16 +59663,241 @@
         "radar": [
           {
             "source": [
-              "szse.cn/lawrules/rule/new",
-              "szse.cn/"
+              "www.szse.cn/www/lawrules/rule/:category"
             ]
+          },
+          {
+            "title": "综合类",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/all/index.html"
+            ],
+            "target": "/rule/all"
+          },
+          {
+            "title": "基础设施REITs类",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/reits/index.html"
+            ],
+            "target": "/rule/reits"
+          },
+          {
+            "title": "衍生品类",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/derivative/index.html"
+            ],
+            "target": "/rule/derivative"
+          },
+          {
+            "title": "会员管理类",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/memberty/index.html"
+            ],
+            "target": "/rule/memberty"
+          },
+          {
+            "title": "纪律处分与内部救济类",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/pr/index.html"
+            ],
+            "target": "/rule/pr"
+          },
+          {
+            "title": "股票类 - 发行上市审核",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/stock/audit/index.html"
+            ],
+            "target": "/rule/stock/audit"
+          },
+          {
+            "title": "股票类 - 发行承销",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/stock/issue/index.html"
+            ],
+            "target": "/rule/stock/issue"
+          },
+          {
+            "title": "股票类 - 通用",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/stock/supervision/currency/index.html"
+            ],
+            "target": "/rule/stock/supervision/currency"
+          },
+          {
+            "title": "股票类 - 主板专用",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/stock/supervision/mb/index.html"
+            ],
+            "target": "/rule/stock/supervision/mb"
+          },
+          {
+            "title": "股票类 - 创业板专用",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/stock/supervision/chinext/index.html"
+            ],
+            "target": "/rule/stock/supervision/chinext"
+          },
+          {
+            "title": "股票类 - 交易",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/stock/trade/index.html"
+            ],
+            "target": "/rule/stock/trade"
+          },
+          {
+            "title": "固收类 - 发行上市（挂牌）",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/bond/bonds/list/index.html"
+            ],
+            "target": "/rule/bond/bonds/list"
+          },
+          {
+            "title": "固收类 - 持续监管",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/bond/bonds/supervision/index.html"
+            ],
+            "target": "/rule/bond/bonds/supervision"
+          },
+          {
+            "title": "固收类 - 交易",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/bond/bonds/trade/index.html"
+            ],
+            "target": "/rule/bond/bonds/trade"
+          },
+          {
+            "title": "固收类 - 资产支持证券",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/bond/abs/index.html"
+            ],
+            "target": "/rule/bond/abs"
+          },
+          {
+            "title": "基金类 - 上市",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/fund/list/index.html"
+            ],
+            "target": "/rule/fund/list"
+          },
+          {
+            "title": "基金类 - 交易",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/fund/trade/index.html"
+            ],
+            "target": "/rule/fund/trade"
+          },
+          {
+            "title": "交易类 - 通用",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/trade/current/index.html"
+            ],
+            "target": "/rule/trade/current"
+          },
+          {
+            "title": "交易类 - 融资融券",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/trade/business/margin/index.html"
+            ],
+            "target": "/rule/trade/business/margin"
+          },
+          {
+            "title": "交易类 - 转融通",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/trade/business/refinancing/index.html"
+            ],
+            "target": "/rule/trade/business/refinancing"
+          },
+          {
+            "title": "交易类 - 股票质押式回购",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/trade/business/pledge/index.html"
+            ],
+            "target": "/rule/trade/business/pledge"
+          },
+          {
+            "title": "交易类 - 质押式报价回购",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/trade/business/price/index.html"
+            ],
+            "target": "/rule/trade/business/price"
+          },
+          {
+            "title": "交易类 - 约定购回",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/trade/business/promise/index.html"
+            ],
+            "target": "/rule/trade/business/promise"
+          },
+          {
+            "title": "交易类 - 协议转让",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/trade/business/transfer/index.html"
+            ],
+            "target": "/rule/trade/business/transfer"
+          },
+          {
+            "title": "交易类 - 其他",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/trade/business/oth/index.html"
+            ],
+            "target": "/rule/trade/business/oth"
+          },
+          {
+            "title": "跨境创新类 - 深港通",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/inno/szhk/index.html"
+            ],
+            "target": "/rule/inno/szhk"
+          },
+          {
+            "title": "跨境创新类 - 试点创新企业",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/inno/pilot/index.html"
+            ],
+            "target": "/rule/inno/pilot"
+          },
+          {
+            "title": "跨境创新类 - H股全流通",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/inno/hc/index.html"
+            ],
+            "target": "/rule/inno/hc"
+          },
+          {
+            "title": "跨境创新类 - 互联互通存托凭证",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/inno/gdr/index.html"
+            ],
+            "target": "/rule/inno/gdr"
+          },
+          {
+            "title": "全部规则 - 全部业务规则",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/allrules/bussiness/index.html"
+            ],
+            "target": "/rule/allrules/bussiness"
+          },
+          {
+            "title": "全部规则 - 规则汇编下载",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/allrules/rulejoin/index.html"
+            ],
+            "target": "/rule/allrules/rulejoin"
+          },
+          {
+            "title": "已废止规则 - 规则废止公告",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/repeal/announcement/index.html"
+            ],
+            "target": "/rule/repeal/announcement"
+          },
+          {
+            "title": "已废止规则 - 已废止规则文本",
+            "source": [
+              "www.szse.cn/www/lawrules/rule/repeal/rules/index.html"
+            ],
+            "target": "/rule/repeal/rules"
           }
         ],
-        "name": "最新规则",
-        "maintainers": [
-          "nczitzk"
-        ],
-        "url": "szse.cn/lawrules/rule/new",
         "location": "rule.ts"
       }
     },
@@ -62920,6 +63320,48 @@
   },
   "twitter": {
     "routes": {
+      "/home_latest/:routeParams?": {
+        "path": "/home_latest/:routeParams?",
+        "categories": [
+          "social-media"
+        ],
+        "example": "/twitter/home_latest",
+        "features": {
+          "requireConfig": [
+            {
+              "name": "TWITTER_USERNAME",
+              "description": "Please see above for details."
+            },
+            {
+              "name": "TWITTER_PASSWORD",
+              "description": "Please see above for details."
+            },
+            {
+              "name": "TWITTER_AUTH_TOKEN",
+              "description": "Please see above for details."
+            }
+          ],
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "Home latest timeline",
+        "maintainers": [
+          "DIYgod",
+          "CaoMeiYouRen"
+        ],
+        "radar": [
+          {
+            "source": [
+              "x.com/home"
+            ],
+            "target": "/home_latest"
+          }
+        ],
+        "location": "home-latest.ts"
+      },
       "/home/:routeParams?": {
         "path": "/home/:routeParams?",
         "categories": [
@@ -64904,6 +65346,39 @@
         "url": "math.ustc.edu.cn/",
         "description": "| 学院新闻 | 通知公告 | 学术交流 | 学术报告 |\n  | -------- | -------- | -------- | -------- |\n  | xyxw     | tzgg     | xsjl     | xsbg     |",
         "location": "math.ts"
+      },
+      "/scms/:type?": {
+        "path": "/scms/:type?",
+        "categories": [
+          "university"
+        ],
+        "example": "/ustc/scms/tzgg",
+        "parameters": {
+          "type": "分类，见下表，默认为通知公告"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "scms.ustc.edu.cn/:id/list.htm"
+            ],
+            "target": "/scms"
+          }
+        ],
+        "name": "化学与材料科学学院",
+        "maintainers": [
+          "boxie123"
+        ],
+        "url": "scms.ustc.edu.cn/",
+        "description": "| 院内新闻 | 通知公告 | 科研动态 | 学术活动 | 其他 |\n  | -------- | -------- | -------- | -------- | -------- |\n  | ynxw     | tzgg     | kydt     | xshd     | 自定义id  |",
+        "location": "scms.ts"
       },
       "/sist/:type?": {
         "path": "/sist/:type?",
@@ -68426,6 +68901,70 @@
   },
   "xidian": {
     "routes": {
+      "/cs/:category?": {
+        "path": "/cs/:category?",
+        "categories": [
+          "university"
+        ],
+        "example": "/xidian/cs/xyxw",
+        "parameters": {
+          "category": "通知类别，默认为主页-学院新闻"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "计算机科学与技术学院",
+        "url": "cs.xidian.edu.cn",
+        "maintainers": [
+          "ZiHao256"
+        ],
+        "description": "| 文章来源                   | 参数          |\n| ---------------------- | ----------- |\n| ✅主页-学院新闻                | xyxw        |\n| ✅主页-通知公告                | tzgg        |\n| ✅主页-交流合作                | jlhz1       |\n| ✅主页-人事人才                | rsrc        |\n| ✅主页-本科生教育 / 本科教育-教学新闻   | bkjy_jxxw   |\n| ✅主页-研究生教育 / 研究生教育-研究生通知 | yjsjy_yjstz |\n| ✅主页-就业招聘                | jyzhaop     |",
+        "radar": [
+          {
+            "source": [
+              "cs.xidian.edu.cn/"
+            ]
+          }
+        ],
+        "location": "cs.ts"
+      },
+      "/gr/:category?": {
+        "path": "/gr/:category?",
+        "categories": [
+          "university"
+        ],
+        "example": "/xidian/gr/home_tzgg1",
+        "parameters": {
+          "category": "通知类别，默认为主页-通知公告"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "研究生院/卓越工程师学院",
+        "url": "gr.xidian.edu.cn",
+        "maintainers": [
+          "ZiHao256"
+        ],
+        "description": "| 文章来源          | 参数           |\n| ------------- | ------------ |\n| ✅主页-最新动态      | home_zxdt    |\n| ✅主页-通知公告      | home_tzgg1   |\n| ✅主页-讲座报告      | home_jzbg    |\n| ✅研院介绍-基本情况    | yyjs_jbqk    |\n| ✅研院介绍-机构设置    | yyjs_jbqk1   |\n| ✅研院介绍-部门领导    | yyjs_jbqk2   |\n| ✅研院介绍-服务指南    | yyjs_jbqk3   |\n| ✅研院介绍-学院联系方式  | yyjs_jbqk4   |\n| ✅招生信息         | yjsy         |\n| ✅招生信息-硕士研究生招生 | yjsy_yjszs   |\n| ✅招生信息-博士研究生招生 | yjsy_bsyjszs |\n| ✅招生信息-其他类型招生  | yjsy_qtlxzs  |\n| ✅培养管理         | pygl         |\n| ✅培养管理-学术学位    | pygl_xsxw    |\n| ✅培养管理-专业学位    | pygl_zyxw    |\n| ✅培养管理-教学管理    | pygl_jxgl    |\n| ✅培养管理-课程建设    | pygl_jxgl1   |\n| ✅培养管理-管理规定    | pygl_jxgl2   |\n| ✅培养管理-国际交流    | pygl_jxgl3   |\n| ✅培养管理-办事流程    | pygl_bslc    |\n| ✅学位授予         | xwsy         |\n| ✅学位授予-通知公告    | xwsy_tzgg    |\n| ✅学位授予-规章制度    | xwsy_gzzd    |\n| ✅学位授予-授位名单    | xwsy_swmd    |\n| ✅学位授予-资料下载    | xwsy_zlxz    |",
+        "radar": [
+          {
+            "source": [
+              "gr.xidian.edu.cn/"
+            ]
+          }
+        ],
+        "location": "gr.ts"
+      },
       "/jwc/:category?": {
         "path": "/jwc/:category?",
         "categories": [
@@ -68444,6 +68983,7 @@
           "supportScihub": false
         },
         "name": "教务处",
+        "url": "jwc.xidian.edu.cn",
         "maintainers": [
           "ShadowySpirits"
         ],
@@ -68452,7 +68992,7 @@
       }
     },
     "name": "西安电子科技大学",
-    "url": "jwc.xidian.edu.cn"
+    "url": "www.xidian.edu.cn"
   },
   "ximalaya": {
     "routes": {
