@@ -827,7 +827,8 @@
     "weirongxu"
   ],
   "/bilibili/user/collection/:uid/:sid/:embed?/:sortReverse?/:page?": [
-    "shininome"
+    "shininome",
+    "cscnk52"
   ],
   "/bilibili/user/fav/:uid/:embed?": [
     "DIYgod"
@@ -939,6 +940,9 @@
   ],
   "/bjx/gf/:type": [
     "Sxuet"
+  ],
+  "/blizzard/news-cn/:category?": [
+    "zhangpeng2k"
   ],
   "/blizzard/news/:language?/:category?": [
     "nczitzk"
@@ -1181,6 +1185,9 @@
   ],
   "/cccfna/:category/:type?": [
     "hualiong"
+  ],
+  "/cccmc/:category{.+}?": [
+    "nczitzk"
   ],
   "/ccf/news/:category?": [
     "nczitzk"
@@ -1563,6 +1570,9 @@
   ],
   "/cpcey/:type?": [
     "Fatpandac"
+  ],
+  "/cpta/:category": [
+    "PrinOrange"
   ],
   "/cpuid/news": [],
   "/cqgas/tqtz": [
@@ -2590,8 +2600,9 @@
   "/genossenschaften*": [
     "sk22"
   ],
-  "/geocaching/blogs": [
-    "HankChow"
+  "/geocaching/blogs/:language?": [
+    "HankChow",
+    "Konano"
   ],
   "/getdr/": [
     "nczitzk"
@@ -2752,7 +2763,8 @@
     "pseudoyu"
   ],
   "/google/research": [
-    "Levix"
+    "Levix",
+    "cscnk52"
   ],
   "/google/scholar/:query": [
     "HenryQW"
@@ -3423,9 +3435,13 @@
     "Derekmini"
   ],
   "/hrbust/jwzx/:type?/:page?": [
-    "LenaNouzen"
+    "LenaNouzen",
+    "cscnk52"
   ],
   "/hrbust/news/:category?": [
+    "cscnk52"
+  ],
+  "/hrbust/nic/:category?": [
     "cscnk52"
   ],
   "/huanqiu/news/:category?": [
@@ -4023,16 +4039,16 @@
     "DIYgod"
   ],
   "/juejin/collection/:collectionId": [
-    "isQ"
+    "yang131323"
+  ],
+  "/juejin/collections/:userId": [
+    "yang131323"
   ],
   "/juejin/column/:id": [
     "xiangzy1"
   ],
   "/juejin/dynamic/:id": [
     "CaoMeiYouRen"
-  ],
-  "/juejin/collections/:userId": [
-    "isQ"
   ],
   "/juejin/pins/:type?": [
     "xyqfer",
@@ -4207,6 +4223,9 @@
   ],
   "/lfsyd/user/:id?": [
     "auto-bot-ty"
+  ],
+  "/lhratings/research/:type?": [
+    "nczitzk"
   ],
   "/lianxh/:category?": [
     "nczitzk"
@@ -5258,6 +5277,9 @@
   "/oschina/column/:id": [
     "nczitzk"
   ],
+  "/oschina/event/:category?": [
+    "nczitzk"
+  ],
   "/oschina/news/:category?": [
     "tgly307",
     "zengxs"
@@ -5269,6 +5291,9 @@
   "/oschina/user/:id": [],
   "/oshwhub/:sortType?": [
     "tylinux"
+  ],
+  "/osu/latest-ranked/:routeParams?": [
+    "nfnfgo"
   ],
   "/osu/packs/:type?": [
     "JimenezLi"
@@ -5375,6 +5400,9 @@
   ],
   "/pconline/focus/:category?": [
     "CH563"
+  ],
+  "/pencilnews/": [
+    "defp"
   ],
   "/penguin-random-house/articles": [
     "StevenRCE0"
@@ -5716,6 +5744,9 @@
   "/qq/kg/:userId": [
     "zhangxiang012"
   ],
+  "/qq/lol/news/:category?": [
+    "nczitzk"
+  ],
   "/qq/pd/guild/:id/:sub?/:sort?": [
     "mobyw"
   ],
@@ -5732,7 +5763,8 @@
     "nczitzk"
   ],
   "/qstheory/magazine/:magazine": [
-    "TonyRL"
+    "TonyRL",
+    "cscnk52"
   ],
   "/questmobile/report/:industry?/:label?": [
     "nczitzk"
@@ -5961,6 +5993,9 @@
     "nczitzk"
   ],
   "/sciencenet/user/:id": [
+    "nczitzk"
+  ],
+  "/scientificamerican/podcast/:id?": [
     "nczitzk"
   ],
   "/scmp/coronavirus": [
@@ -6706,12 +6741,6 @@
   "/taoguba/blog/:id": [
     "nczitzk"
   ],
-  "/taoguba/user/:id": [
-    "nczitzk"
-  ],
-  "/taoguba/index": [
-    "nczitzk"
-  ],
   "/taoguba/:category?": [
     "nczitzk"
   ],
@@ -6982,6 +7011,9 @@
   "/tkww/:column{.+}?": [
     "quiniapiezoelectricity"
   ],
+  "/tmtpost/nictation": [
+    "defp"
+  ],
   "/tokeninsight/blog/:lang?": [
     "fuergaosi233"
   ],
@@ -6990,8 +7022,12 @@
   "/tongji/bks": [
     "shiquda"
   ],
+  "/tongji/gs": [
+    "sitdownkevin"
+  ],
   "/tongji/yjs": [
-    "shengmaosu"
+    "shengmaosu",
+    "sitdownkevin"
   ],
   "/tongji/sem/:type?": [
     "sitdownkevin"
@@ -7040,6 +7076,9 @@
   ],
   "/tsdm39/bd/:type?": [
     "equt"
+  ],
+  "/tsinghua/lib/tzgg/:category": [
+    "linsenwang"
   ],
   "/tsinghua/lib/zydt/:category?": [
     "nczitzk"
@@ -7108,6 +7147,9 @@
   ],
   "/twreporter/newest": [
     "emdoe"
+  ],
+  "/txks/news": [
+    "PrinOrange"
   ],
   "/txrjy/fornumtopic/:channel?": [
     "Fatpandac"
@@ -7403,9 +7445,6 @@
   ],
   "/washingtonpost/app/:category{.+}?": [
     "quiniapiezoelectricity"
-  ],
-  "/watasuke/blog": [
-    "honahuku"
   ],
   "/wchscu/recruit": [
     "ViggoC"
@@ -7754,6 +7793,9 @@
     "nczitzk"
   ],
   "/xmnn/news/:category{.+}?": [],
+  "/xmu/kydt": [
+    "linsenwang"
+  ],
   "/xmut/jwc/bkjw/:category?": [],
   "/xmut/jwc/yjjw/:category?": [],
   "/xsijishe/forum/:fid": [

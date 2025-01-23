@@ -11784,7 +11784,8 @@
         },
         "name": "UP 主频道的合集",
         "maintainers": [
-          "shininome"
+          "shininome",
+          "cscnk52"
         ],
         "location": "user-collection.ts"
       },
@@ -13011,6 +13012,40 @@
   },
   "blizzard": {
     "routes": {
+      "/news-cn/:category?": {
+        "path": "/news-cn/:category?",
+        "categories": [
+          "game"
+        ],
+        "example": "/blizzard/news-cn/ow",
+        "parameters": {
+          "category": "游戏类别, 默认为 ow"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "ow.blizzard.cn",
+              "wow.blizzard.cn",
+              "hs.blizzard.cn"
+            ],
+            "target": "/news-cn/"
+          }
+        ],
+        "name": "暴雪游戏国服新闻",
+        "maintainers": [
+          "zhangpeng2k"
+        ],
+        "description": "\n| 守望先锋 | 炉石传说 | 魔兽世界 |\n|----------|----------|---------|\n| ow       | hs       | wow     |\n",
+        "location": "news-cn.ts"
+      },
       "/news/:language?/:category?": {
         "path": "/news/:language?/:category?",
         "categories": [
@@ -15628,7 +15663,7 @@
           "bigId": "分类 id，默认为 `2`，即行业资讯，可在对应分类页 URL 中找到",
           "smallId": "子分类 id，默认为 `11`，即行业资讯，可在对应分类页 URL 中找到"
         },
-        "description": "::: tip\n  若订阅 [行业资讯](http://www.cbpanet.com/dzp_news.aspx?bigid=2&smallid=11)，网址为 `http://www.cbpanet.com/dzp_news.aspx?bigid=2&smallid=11`。截取 `https://www.cbpanet.com/` 的 `bigid` 和 `smallid` 的部分作为参数填入，此时路由为 [`/cbpanet/dzp_news/4/15`](https://rsshub.app/cbpanet/dzp_news/4/15)。\n:::\n\n  <details>\n    <summary>更多分类</summary>\n\n  #### [协会](http://www.cbpanet.com/dzp_xiehui.aspx)\n\n  | [协会介绍](http://www.cbpanet.com/dzp_news.aspx?bigid=1&smallid=1) | [协会章程](http://www.cbpanet.com/dzp_news.aspx?bigid=1&smallid=2) | [理事会](http://www.cbpanet.com/dzp_news.aspx?bigid=1&smallid=3) | [内设机构](http://www.cbpanet.com/dzp_news.aspx?bigid=1&smallid=4) | [协会通知](http://www.cbpanet.com/dzp_news.aspx?bigid=1&smallid=5) | [协会活动](http://www.cbpanet.com/dzp_news.aspx?bigid=1&smallid=6) |\n  | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ---------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |\n  | [1/1](https://rsshub.app/cbpanet/dzp_news/1/1)                     | [1/2](https://rsshub.app/cbpanet/dzp_news/1/2)                     | [1/3](https://rsshub.app/cbpanet/dzp_news/1/3)                   | [1/4](https://rsshub.app/cbpanet/dzp_news/1/4)                     | [1/5](https://rsshub.app/cbpanet/dzp_news/1/5)                     | [1/6](https://rsshub.app/cbpanet/dzp_news/1/6)                     |\n\n  | [出版物](http://www.cbpanet.com/dzp_news.aspx?bigid=1&smallid=7) | [会员权利与义务](http://www.cbpanet.com/dzp_news.aspx?bigid=1&smallid=30) |\n  | ---------------------------------------------------------------- | ------------------------------------------------------------------------- |\n  | [1/7](https://rsshub.app/cbpanet/dzp_news/1/7)                   | [1/30](https://rsshub.app/cbpanet/dzp_news/1/30)                          |\n\n  #### [行业资讯](http://www.cbpanet.com/dzp_news_list.aspx)\n\n  | [国内资讯](http://www.cbpanet.com/dzp_news.aspx?bigid=2&smallid=8) | [海外资讯](http://www.cbpanet.com/dzp_news.aspx?bigid=2&smallid=9) | [企业新闻](http://www.cbpanet.com/dzp_news.aspx?bigid=2&smallid=10) | [行业资讯](http://www.cbpanet.com/dzp_news.aspx?bigid=2&smallid=11) | [热点聚焦](http://www.cbpanet.com/dzp_news.aspx?bigid=2&smallid=43) | [今日推荐](http://www.cbpanet.com/dzp_news.aspx?bigid=2&smallid=44) |\n  | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |\n  | [2/8](https://rsshub.app/cbpanet/dzp_news/2/8)                     | [2/9](https://rsshub.app/cbpanet/dzp_news/2/9)                     | [2/10](https://rsshub.app/cbpanet/dzp_news/2/10)                    | [2/11](https://rsshub.app/cbpanet/dzp_news/2/11)                    | [2/43](https://rsshub.app/cbpanet/dzp_news/2/43)                    | [2/44](https://rsshub.app/cbpanet/dzp_news/2/44)                    |\n\n  #### [原料信息](http://www.cbpanet.com/dzp_yuanliao.aspx)\n\n  | [价格行情](http://www.cbpanet.com/dzp_news.aspx?bigid=3&smallid=12) | [分析预测](http://www.cbpanet.com/dzp_news.aspx?bigid=3&smallid=13) | [原料信息](http://www.cbpanet.com/dzp_news.aspx?bigid=3&smallid=40) | [热点聚焦](http://www.cbpanet.com/dzp_news.aspx?bigid=3&smallid=45) |\n  | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |\n  | [3/12](https://rsshub.app/cbpanet/dzp_news/3/12)                    | [3/13](https://rsshub.app/cbpanet/dzp_news/3/13)                    | [3/40](https://rsshub.app/cbpanet/dzp_news/3/40)                    | [3/45](https://rsshub.app/cbpanet/dzp_news/3/45)                    |\n\n  #### [法规标准](http://www.cbpanet.com/dzp_fagui.aspx)\n\n  | [法规资讯](http://www.cbpanet.com/dzp_news.aspx?bigid=4&smallid=15) | [法律法规](http://www.cbpanet.com/dzp_news.aspx?bigid=4&smallid=16) | [国内标准](http://www.cbpanet.com/dzp_news.aspx?bigid=4&smallid=14) | [国外标准](http://www.cbpanet.com/dzp_news.aspx?bigid=4&smallid=17) | [法规聚焦](http://www.cbpanet.com/dzp_news.aspx?bigid=4&smallid=46) | [今日推荐](http://www.cbpanet.com/dzp_news.aspx?bigid=4&smallid=47) |\n  | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |\n  | [4/15](https://rsshub.app/cbpanet/dzp_news/4/15)                    | [4/16](https://rsshub.app/cbpanet/dzp_news/4/16)                    | [4/14](https://rsshub.app/cbpanet/dzp_news/4/14)                    | [4/17](https://rsshub.app/cbpanet/dzp_news/4/17)                    | [4/46](https://rsshub.app/cbpanet/dzp_news/4/46)                    | [4/47](https://rsshub.app/cbpanet/dzp_news/4/47)                    |\n\n  #### [技术专区](http://www.cbpanet.com/dzp_jishu.aspx)\n\n  | [产品介绍](http://www.cbpanet.com/dzp_news.aspx?bigid=5&smallid=18) | [科技成果](http://www.cbpanet.com/dzp_news.aspx?bigid=5&smallid=19) | [学术论文](http://www.cbpanet.com/dzp_news.aspx?bigid=5&smallid=20) | [资料下载](http://www.cbpanet.com/dzp_news.aspx?bigid=5&smallid=21) | [专家](http://www.cbpanet.com/dzp_news.aspx?bigid=5&smallid=50) | [民间智库](http://www.cbpanet.com/dzp_news.aspx?bigid=5&smallid=57) |\n  | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------- |\n  | [5/18](https://rsshub.app/cbpanet/dzp_news/5/18)                    | [5/19](https://rsshub.app/cbpanet/dzp_news/5/19)                    | [5/20](https://rsshub.app/cbpanet/dzp_news/5/20)                    | [5/21](https://rsshub.app/cbpanet/dzp_news/5/21)                    | [5/50](https://rsshub.app/cbpanet/dzp_news/5/50)                | [5/57](https://rsshub.app/cbpanet/dzp_news/5/57)                    |\n\n  #### [豆制品消费指南](http://www.cbpanet.com/dzp_zhinan.aspx)\n\n  | [膳食指南](http://www.cbpanet.com/dzp_news.aspx?bigid=6&smallid=22) | [营养成分](http://www.cbpanet.com/dzp_news.aspx?bigid=6&smallid=23) | [豆食菜谱](http://www.cbpanet.com/dzp_news.aspx?bigid=6&smallid=24) | [问与答](http://www.cbpanet.com/dzp_news.aspx?bigid=6&smallid=31) | [今日推荐](http://www.cbpanet.com/dzp_news.aspx?bigid=6&smallid=48) | [消费热点](http://www.cbpanet.com/dzp_news.aspx?bigid=6&smallid=53) |\n  | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |\n  | [6/22](https://rsshub.app/cbpanet/dzp_news/6/22)                    | [6/23](https://rsshub.app/cbpanet/dzp_news/6/23)                    | [6/24](https://rsshub.app/cbpanet/dzp_news/6/24)                    | [6/31](https://rsshub.app/cbpanet/dzp_news/6/31)                  | [6/48](https://rsshub.app/cbpanet/dzp_news/6/48)                    | [6/53](https://rsshub.app/cbpanet/dzp_news/6/53)                    |\n\n  #### [营养与健康](http://www.cbpanet.com/dzp_yingyang.aspx)\n\n  | [大豆营养概况](http://www.cbpanet.com/dzp_news.aspx?bigid=7&smallid=25) | [大豆食品和人类健康](http://www.cbpanet.com/dzp_news.aspx?bigid=7&smallid=26) | [世界豆类日，爱豆大行动](http://www.cbpanet.com/dzp_news.aspx?bigid=7&smallid=27) | [谣言粉碎机](http://www.cbpanet.com/dzp_news.aspx?bigid=7&smallid=29) | [最新资讯](http://www.cbpanet.com/dzp_news.aspx?bigid=7&smallid=41) | [专家视点](http://www.cbpanet.com/dzp_news.aspx?bigid=7&smallid=49) |\n  | ----------------------------------------------------------------------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |\n  | [7/25](https://rsshub.app/cbpanet/dzp_news/7/25)                        | [7/26](https://rsshub.app/cbpanet/dzp_news/7/26)                              | [7/27](https://rsshub.app/cbpanet/dzp_news/7/27)                                  | [7/29](https://rsshub.app/cbpanet/dzp_news/7/29)                      | [7/41](https://rsshub.app/cbpanet/dzp_news/7/41)                    | [7/49](https://rsshub.app/cbpanet/dzp_news/7/49)                    |\n\n  </details>\n    ",
+        "description": "::: tip\n  若订阅 [行业资讯](https://www.cbpanet.com/dzp_news.aspx?bigid=2&smallid=11)，网址为 `https://www.cbpanet.com/dzp_news.aspx?bigid=2&smallid=11`。截取 `https://www.cbpanet.com/` 的 `bigid` 和 `smallid` 的部分作为参数填入，此时路由为 [`/cbpanet/dzp_news/4/15`](https://rsshub.app/cbpanet/dzp_news/4/15)。\n:::\n\n  <details>\n    <summary>更多分类</summary>\n\n  #### [协会](https://www.cbpanet.com/dzp_xiehui.aspx)\n\n  | [协会介绍](https://www.cbpanet.com/dzp_news.aspx?bigid=1&smallid=1) | [协会章程](https://www.cbpanet.com/dzp_news.aspx?bigid=1&smallid=2) | [理事会](https://www.cbpanet.com/dzp_news.aspx?bigid=1&smallid=3) | [内设机构](https://www.cbpanet.com/dzp_news.aspx?bigid=1&smallid=4) | [协会通知](https://www.cbpanet.com/dzp_news.aspx?bigid=1&smallid=5) | [协会活动](https://www.cbpanet.com/dzp_news.aspx?bigid=1&smallid=6) |\n  | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ---------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |\n  | [1/1](https://rsshub.app/cbpanet/dzp_news/1/1)                     | [1/2](https://rsshub.app/cbpanet/dzp_news/1/2)                     | [1/3](https://rsshub.app/cbpanet/dzp_news/1/3)                   | [1/4](https://rsshub.app/cbpanet/dzp_news/1/4)                     | [1/5](https://rsshub.app/cbpanet/dzp_news/1/5)                     | [1/6](https://rsshub.app/cbpanet/dzp_news/1/6)                     |\n\n  | [出版物](https://www.cbpanet.com/dzp_news.aspx?bigid=1&smallid=7) | [会员权利与义务](https://www.cbpanet.com/dzp_news.aspx?bigid=1&smallid=30) |\n  | ---------------------------------------------------------------- | ------------------------------------------------------------------------- |\n  | [1/7](https://rsshub.app/cbpanet/dzp_news/1/7)                   | [1/30](https://rsshub.app/cbpanet/dzp_news/1/30)                          |\n\n  #### [行业资讯](https://www.cbpanet.com/dzp_news_list.aspx)\n\n  | [国内资讯](https://www.cbpanet.com/dzp_news.aspx?bigid=2&smallid=8) | [海外资讯](https://www.cbpanet.com/dzp_news.aspx?bigid=2&smallid=9) | [企业新闻](https://www.cbpanet.com/dzp_news.aspx?bigid=2&smallid=10) | [行业资讯](https://www.cbpanet.com/dzp_news.aspx?bigid=2&smallid=11) | [热点聚焦](https://www.cbpanet.com/dzp_news.aspx?bigid=2&smallid=43) | [今日推荐](https://www.cbpanet.com/dzp_news.aspx?bigid=2&smallid=44) |\n  | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |\n  | [2/8](https://rsshub.app/cbpanet/dzp_news/2/8)                     | [2/9](https://rsshub.app/cbpanet/dzp_news/2/9)                     | [2/10](https://rsshub.app/cbpanet/dzp_news/2/10)                    | [2/11](https://rsshub.app/cbpanet/dzp_news/2/11)                    | [2/43](https://rsshub.app/cbpanet/dzp_news/2/43)                    | [2/44](https://rsshub.app/cbpanet/dzp_news/2/44)                    |\n\n  #### [原料信息](https://www.cbpanet.com/dzp_yuanliao.aspx)\n\n  | [价格行情](https://www.cbpanet.com/dzp_news.aspx?bigid=3&smallid=12) | [分析预测](https://www.cbpanet.com/dzp_news.aspx?bigid=3&smallid=13) | [原料信息](https://www.cbpanet.com/dzp_news.aspx?bigid=3&smallid=40) | [热点聚焦](https://www.cbpanet.com/dzp_news.aspx?bigid=3&smallid=45) |\n  | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |\n  | [3/12](https://rsshub.app/cbpanet/dzp_news/3/12)                    | [3/13](https://rsshub.app/cbpanet/dzp_news/3/13)                    | [3/40](https://rsshub.app/cbpanet/dzp_news/3/40)                    | [3/45](https://rsshub.app/cbpanet/dzp_news/3/45)                    |\n\n  #### [法规标准](https://www.cbpanet.com/dzp_fagui.aspx)\n\n  | [法规资讯](https://www.cbpanet.com/dzp_news.aspx?bigid=4&smallid=15) | [法律法规](https://www.cbpanet.com/dzp_news.aspx?bigid=4&smallid=16) | [国内标准](https://www.cbpanet.com/dzp_news.aspx?bigid=4&smallid=14) | [国外标准](https://www.cbpanet.com/dzp_news.aspx?bigid=4&smallid=17) | [法规聚焦](https://www.cbpanet.com/dzp_news.aspx?bigid=4&smallid=46) | [今日推荐](https://www.cbpanet.com/dzp_news.aspx?bigid=4&smallid=47) |\n  | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |\n  | [4/15](https://rsshub.app/cbpanet/dzp_news/4/15)                    | [4/16](https://rsshub.app/cbpanet/dzp_news/4/16)                    | [4/14](https://rsshub.app/cbpanet/dzp_news/4/14)                    | [4/17](https://rsshub.app/cbpanet/dzp_news/4/17)                    | [4/46](https://rsshub.app/cbpanet/dzp_news/4/46)                    | [4/47](https://rsshub.app/cbpanet/dzp_news/4/47)                    |\n\n  #### [技术专区](https://www.cbpanet.com/dzp_jishu.aspx)\n\n  | [产品介绍](https://www.cbpanet.com/dzp_news.aspx?bigid=5&smallid=18) | [科技成果](https://www.cbpanet.com/dzp_news.aspx?bigid=5&smallid=19) | [学术论文](https://www.cbpanet.com/dzp_news.aspx?bigid=5&smallid=20) | [资料下载](https://www.cbpanet.com/dzp_news.aspx?bigid=5&smallid=21) | [专家](https://www.cbpanet.com/dzp_news.aspx?bigid=5&smallid=50) | [民间智库](https://www.cbpanet.com/dzp_news.aspx?bigid=5&smallid=57) |\n  | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------- |\n  | [5/18](https://rsshub.app/cbpanet/dzp_news/5/18)                    | [5/19](https://rsshub.app/cbpanet/dzp_news/5/19)                    | [5/20](https://rsshub.app/cbpanet/dzp_news/5/20)                    | [5/21](https://rsshub.app/cbpanet/dzp_news/5/21)                    | [5/50](https://rsshub.app/cbpanet/dzp_news/5/50)                | [5/57](https://rsshub.app/cbpanet/dzp_news/5/57)                    |\n\n  #### [豆制品消费指南](https://www.cbpanet.com/dzp_zhinan.aspx)\n\n  | [膳食指南](https://www.cbpanet.com/dzp_news.aspx?bigid=6&smallid=22) | [营养成分](https://www.cbpanet.com/dzp_news.aspx?bigid=6&smallid=23) | [豆食菜谱](https://www.cbpanet.com/dzp_news.aspx?bigid=6&smallid=24) | [问与答](https://www.cbpanet.com/dzp_news.aspx?bigid=6&smallid=31) | [今日推荐](https://www.cbpanet.com/dzp_news.aspx?bigid=6&smallid=48) | [消费热点](https://www.cbpanet.com/dzp_news.aspx?bigid=6&smallid=53) |\n  | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |\n  | [6/22](https://rsshub.app/cbpanet/dzp_news/6/22)                    | [6/23](https://rsshub.app/cbpanet/dzp_news/6/23)                    | [6/24](https://rsshub.app/cbpanet/dzp_news/6/24)                    | [6/31](https://rsshub.app/cbpanet/dzp_news/6/31)                  | [6/48](https://rsshub.app/cbpanet/dzp_news/6/48)                    | [6/53](https://rsshub.app/cbpanet/dzp_news/6/53)                    |\n\n  #### [营养与健康](https://www.cbpanet.com/dzp_yingyang.aspx)\n\n  | [大豆营养概况](https://www.cbpanet.com/dzp_news.aspx?bigid=7&smallid=25) | [大豆食品和人类健康](https://www.cbpanet.com/dzp_news.aspx?bigid=7&smallid=26) | [世界豆类日，爱豆大行动](https://www.cbpanet.com/dzp_news.aspx?bigid=7&smallid=27) | [谣言粉碎机](https://www.cbpanet.com/dzp_news.aspx?bigid=7&smallid=29) | [最新资讯](https://www.cbpanet.com/dzp_news.aspx?bigid=7&smallid=41) | [专家视点](https://www.cbpanet.com/dzp_news.aspx?bigid=7&smallid=49) |\n  | ----------------------------------------------------------------------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |\n  | [7/25](https://rsshub.app/cbpanet/dzp_news/7/25)                        | [7/26](https://rsshub.app/cbpanet/dzp_news/7/26)                              | [7/27](https://rsshub.app/cbpanet/dzp_news/7/27)                                  | [7/29](https://rsshub.app/cbpanet/dzp_news/7/29)                      | [7/41](https://rsshub.app/cbpanet/dzp_news/7/41)                    | [7/49](https://rsshub.app/cbpanet/dzp_news/7/49)                    |\n\n  </details>\n    ",
         "categories": [
           "new-media"
         ],
@@ -16014,6 +16049,170 @@
     },
     "name": "中国食品土畜进出口商会",
     "url": "www.cccfna.org.cn",
+    "lang": "zh-CN"
+  },
+  "cccmc": {
+    "routes": {
+      "/:category{.+}?": {
+        "path": "/:category{.+}?",
+        "name": "通用",
+        "url": "www.cccmc.org.cn",
+        "maintainers": [
+          "nczitzk"
+        ],
+        "example": "/cccmc/ywgg/tzgg",
+        "parameters": {
+          "category": "分类，默认为 `ywgg/tzgg`，即通知公告，可在对应分类页 URL 中找到, Category, `ywgg/tzgg`，即通知公告  by default"
+        },
+        "description": ":::tip\n若订阅 [综合政策](https://www.cccmc.org.cn/zcfg/zhzc/)，网址为 `https://www.cccmc.org.cn/zcfg/zhzc/`，请截取 `https://www.cccmc.org.cn/` 到末尾的部分 `zcfg/zhzc` 作为 `category` 参数填入，此时目标路由为 [`/cccmc/zcfg/zhzc`](https://rsshub.app/cccmc/zcfg/zhzc)。\n:::\n\n<details>\n  <summary>更多分类</summary>\n\n  #### [会员之家](https://www.cccmc.org.cn/hyzj)\n\n  | [会员之声](https://www.cccmc.org.cn/hyzj/hyzs/) | [会员动态](https://www.cccmc.org.cn/hyzj/hydt/) | [会员推介](https://www.cccmc.org.cn/hyzj/hytj/) |\n  | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |\n  | [hyzj/hyzs](https://rsshub.app/cccmc/hyzj/hyzs) | [hyzj/hydt](https://rsshub.app/cccmc/hyzj/hydt) | [hyzj/hytj](https://rsshub.app/cccmc/hyzj/hytj) |\n\n  #### [政策法规](https://www.cccmc.org.cn/zcfg)\n\n  | [综合政策](https://www.cccmc.org.cn/zcfg/zhzc/) | [国内贸易](https://www.cccmc.org.cn/zcfg/gnmy/) | [对外贸易](https://www.cccmc.org.cn/zcfg/dwmy/) | [投资合作](https://www.cccmc.org.cn/zcfg/tzhz/) |\n  | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |\n  | [zcfg/zhzc](https://rsshub.app/cccmc/zcfg/zhzc) | [zcfg/gnmy](https://rsshub.app/cccmc/zcfg/gnmy) | [zcfg/dwmy](https://rsshub.app/cccmc/zcfg/dwmy) | [zcfg/tzhz](https://rsshub.app/cccmc/zcfg/tzhz) |\n\n  #### [行业资讯](https://www.cccmc.org.cn/hyzx)\n\n  | [统计分析](https://www.cccmc.org.cn/hyzx/tjfx/) | [石油化工](https://www.cccmc.org.cn/hyzx/syhg/) | [金属矿产](https://www.cccmc.org.cn/hyzx/jskc/) | [五金建材](https://www.cccmc.org.cn/hyzx/wjjc/) |\n  | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |\n  | [hyzx/tjfx](https://rsshub.app/cccmc/hyzx/tjfx) | [hyzx/syhg](https://rsshub.app/cccmc/hyzx/syhg) | [hyzx/jskc](https://rsshub.app/cccmc/hyzx/jskc) | [hyzx/wjjc](https://rsshub.app/cccmc/hyzx/wjjc) |\n\n  #### [商业机会](https://www.cccmc.org.cn/syjh/)+\n\n  | [供应信息](https://www.cccmc.org.cn/syjh/gyxx/) | [需求信息](https://www.cccmc.org.cn/syjh/xqxx/) | [合作信息](https://www.cccmc.org.cn/syjh/hzxx/) |\n  | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |\n  | [syjh/gyxx](https://rsshub.app/cccmc/syjh/gyxx) | [syjh/xqxx](https://rsshub.app/cccmc/syjh/xqxx) | [syjh/hzxx](https://rsshub.app/cccmc/syjh/hzxx) |\n\n  #### [商会党建](https://www.cccmc.org.cn/shdj)\n\n  | [党群动态](https://www.cccmc.org.cn/shdj/dqdt/) | [党内法规](https://www.cccmc.org.cn/shdj/dnfg/) | [青年工作](https://www.cccmc.org.cn/shdj/qngz/) |\n  | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |\n  | [shdj/dqdt](https://rsshub.app/cccmc/shdj/dqdt) | [shdj/dnfg](https://rsshub.app/cccmc/shdj/dnfg) | [shdj/qngz](https://rsshub.app/cccmc/shdj/qngz) |\n</details>\n",
+        "categories": [
+          "new-media"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.cccmc.org.cn/:category"
+            ]
+          },
+          {
+            "title": "商业机会 - 供应信息",
+            "source": [
+              "www.cccmc.org.cn/syjh/gyxx/"
+            ],
+            "target": "/syjh/gyxx"
+          },
+          {
+            "title": "商业机会 - 需求信息",
+            "source": [
+              "www.cccmc.org.cn/syjh/xqxx/"
+            ],
+            "target": "/syjh/xqxx"
+          },
+          {
+            "title": "商业机会 - 合作信息",
+            "source": [
+              "www.cccmc.org.cn/syjh/hzxx/"
+            ],
+            "target": "/syjh/hzxx"
+          },
+          {
+            "title": "商会党建 - 党群动态",
+            "source": [
+              "www.cccmc.org.cn/shdj/dqdt/"
+            ],
+            "target": "/shdj/dqdt"
+          },
+          {
+            "title": "商会党建 - 党内法规",
+            "source": [
+              "www.cccmc.org.cn/shdj/dnfg/"
+            ],
+            "target": "/shdj/dnfg"
+          },
+          {
+            "title": "商会党建 - 青年工作",
+            "source": [
+              "www.cccmc.org.cn/shdj/qngz/"
+            ],
+            "target": "/shdj/qngz"
+          },
+          {
+            "title": "行业资讯 - 统计分析",
+            "source": [
+              "www.cccmc.org.cn/hyzx/tjfx/"
+            ],
+            "target": "/hyzx/tjfx"
+          },
+          {
+            "title": "行业资讯 - 石油化工",
+            "source": [
+              "www.cccmc.org.cn/hyzx/syhg/"
+            ],
+            "target": "/hyzx/syhg"
+          },
+          {
+            "title": "行业资讯 - 金属矿产",
+            "source": [
+              "www.cccmc.org.cn/hyzx/jskc/"
+            ],
+            "target": "/hyzx/jskc"
+          },
+          {
+            "title": "行业资讯 - 五金建材",
+            "source": [
+              "www.cccmc.org.cn/hyzx/wjjc/"
+            ],
+            "target": "/hyzx/wjjc"
+          },
+          {
+            "title": "会员之家 - 会员之声",
+            "source": [
+              "www.cccmc.org.cn/hyzj/hyzs/"
+            ],
+            "target": "/hyzj/hyzs"
+          },
+          {
+            "title": "会员之家 - 会员动态",
+            "source": [
+              "www.cccmc.org.cn/hyzj/hydt/"
+            ],
+            "target": "/hyzj/hydt"
+          },
+          {
+            "title": "会员之家 - 会员推介",
+            "source": [
+              "www.cccmc.org.cn/hyzj/hytj/"
+            ],
+            "target": "/hyzj/hytj"
+          },
+          {
+            "title": "政策法规 - 综合政策",
+            "source": [
+              "www.cccmc.org.cn/zcfg/zhzc/"
+            ],
+            "target": "/zcfg/zhzc"
+          },
+          {
+            "title": "政策法规 - 国内贸易",
+            "source": [
+              "www.cccmc.org.cn/zcfg/gnmy/"
+            ],
+            "target": "/zcfg/gnmy"
+          },
+          {
+            "title": "政策法规 - 对外贸易",
+            "source": [
+              "www.cccmc.org.cn/zcfg/dwmy/"
+            ],
+            "target": "/zcfg/dwmy"
+          },
+          {
+            "title": "政策法规 - 投资合作",
+            "source": [
+              "www.cccmc.org.cn/zcfg/tzhz/"
+            ],
+            "target": "/zcfg/tzhz"
+          }
+        ],
+        "view": 0,
+        "location": "index.ts"
+      }
+    },
+    "name": "中国五矿化工进出口商会",
+    "url": "www.cccmc.org.cn",
+    "categories": [
+      "new-media"
+    ],
+    "description": "",
     "lang": "zh-CN"
   },
   "ccf": {
@@ -21163,6 +21362,55 @@
     "name": "台湾行政院消费者保护会",
     "url": "cpc.ey.gov.tw",
     "lang": "zh-TW"
+  },
+  "cpta": {
+    "routes": {
+      "/:category": {
+        "path": "/:category",
+        "name": "中国人事考试网发布",
+        "maintainers": [
+          "PrinOrange"
+        ],
+        "parameters": {
+          "category": "栏目参数，可见下表描述。"
+        },
+        "description": "\n| Category    | Title     | Description                         |\n|-------------|-----------|-------------------------------------|\n| notice      | 通知公告  | 中国人事考试网 考试通知公告汇总    |\n| performance | 成绩公布  | 中国人事考试网 考试成绩公布汇总    |\n",
+        "categories": [
+          "study"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false,
+          "supportRadar": true,
+          "antiCrawler": true
+        },
+        "radar": [
+          {
+            "title": "中国人事考试网通知公告",
+            "source": [
+              "www.cpta.com.cn/notice.html",
+              "www.cpta.com.cn"
+            ],
+            "target": "/notice"
+          },
+          {
+            "title": "中国人事考试网成绩发布",
+            "source": [
+              "www.cpta.com.cn/performance.html",
+              "www.cpta.com.cn"
+            ],
+            "target": "/performance"
+          }
+        ],
+        "example": "/cpta/notice",
+        "location": "handler.ts"
+      }
+    },
+    "name": "中国人事考试网",
+    "url": "www.cpta.com.cn"
   },
   "cpuid": {
     "routes": {
@@ -31568,27 +31816,52 @@
     "routes": {
       "/news/:type?/:category?": {
         "path": "/news/:type?/:category?",
-        "categories": [
-          "game"
+        "name": "新聞",
+        "url": "news.gamebase.com.tw",
+        "maintainers": [
+          "nczitzk"
         ],
         "example": "/gamebase/news",
         "parameters": {
-          "type": "类型，见下表，默认为 newslist",
-          "category": "分类，可在对应分类页 URL 中找到，默认为 `all` 即全部"
+          "type": "類型，見下表，預設為 newslist",
+          "category": "分類，預設為 `all`，即全部，可在對應分類頁 URL 中找到"
         },
+        "description": ":::tip\n若訂閱 [手機遊戲新聞](https://news.gamebase.com.tw/news/newslist?type=mobile)，網址為 `https://news.gamebase.com.tw/news/newslist?type=mobile`，請截取 `https://news.gamebase.com.tw/news/` 到末尾的部分 `newslist` 作為 `type` 參數填入，`mobile` 作為 `category` 參數填入，此時目標路由為 [`/gamebase/news/newslist/mobile`](https://rsshub.app/gamebase/news/newslist/mobile)。\n:::\n\n| newslist | r18list |\n| -------- | ------- |\n",
+        "categories": [
+          "game"
+        ],
         "features": {
           "requireConfig": false,
           "requirePuppeteer": false,
           "antiCrawler": false,
+          "supportRadar": true,
           "supportBT": false,
           "supportPodcast": false,
           "supportScihub": false
         },
-        "name": "新聞",
-        "maintainers": [
-          "nczitzk"
+        "radar": [
+          {
+            "source": [
+              "news.gamebase.com.tw/news",
+              "news.gamebase.com.tw/news/:type"
+            ]
+          }
         ],
-        "description": "类型\n\n  | newslist | r18list |\n  | -------- | ------- |",
+        "view": 0,
+        "zh": {
+          "path": "/news/:type?/:category?",
+          "name": "新闻",
+          "url": "news.gamebase.com.tw",
+          "maintainers": [
+            "nczitzk"
+          ],
+          "example": "/gamebase/news",
+          "parameters": {
+            "type": "类型，见下表，默认为 newslist",
+            "category": "分类，默认为 `all`，即全部，可在对应分类页 URL 中找到"
+          },
+          "description": ":::tip\n若订阅 [手机游戏新闻](https://news.gamebase.com.tw/news/newslist?type=mobile)，网址为 `https://news.gamebase.com.tw/news/newslist?type=mobile`，请截取 `https://news.gamebase.com.tw/news/` 到末尾的部分 `newslist` 作为 `type` 参数填入，`mobile` 作为 `category` 参数填入，此时目标路由为 [`/gamebase/news/newslist/mobile`](https://rsshub.app/gamebase/news/newslist/mobile)。\n:::\n\n| newslist | r18list |\n| -------- | ------- |\n"
+        },
         "location": "news.ts"
       }
     },
@@ -32660,13 +32933,48 @@
   },
   "geocaching": {
     "routes": {
-      "/blogs": {
-        "path": "/blogs",
+      "/blogs/:language?": {
+        "path": "/blogs/:language?",
         "categories": [
           "blog"
         ],
-        "example": "/geocaching/blogs",
-        "parameters": {},
+        "example": "/geocaching/blogs/en",
+        "parameters": {
+          "language": {
+            "description": "language",
+            "default": "en",
+            "options": [
+              {
+                "value": "en",
+                "label": "English"
+              },
+              {
+                "value": "de",
+                "label": "Deutsch"
+              },
+              {
+                "value": "fr",
+                "label": "Français"
+              },
+              {
+                "value": "es",
+                "label": "Español"
+              },
+              {
+                "value": "nl",
+                "label": "Nederlands"
+              },
+              {
+                "value": "cs",
+                "label": "Čeština"
+              },
+              {
+                "value": "all",
+                "label": "Not Specified"
+              }
+            ]
+          }
+        },
         "features": {
           "requireConfig": false,
           "requirePuppeteer": false,
@@ -32685,7 +32993,8 @@
         ],
         "name": "Official Blogs",
         "maintainers": [
-          "HankChow"
+          "HankChow",
+          "Konano"
         ],
         "url": "geocaching.com/blog/",
         "location": "blogs.ts"
@@ -34345,7 +34654,8 @@
         "example": "/google/research",
         "name": "Research Blog",
         "maintainers": [
-          "Levix"
+          "Levix",
+          "cscnk52"
         ],
         "radar": [
           {
@@ -42408,27 +42718,30 @@
     "routes": {
       "/jwzx/:type?/:page?": {
         "path": "/jwzx/:type?/:page?",
-        "categories": [
-          "university"
+        "name": "教务处",
+        "url": "jwzx.hrbust.edu.cn",
+        "maintainers": [
+          "LenaNouzen",
+          "cscnk52"
         ],
         "example": "/hrbust/jwzx",
         "parameters": {
-          "type": "分类名，默认为教务公告",
-          "page": "文章数，默认为12"
+          "type": "分类编号，默认为 354（教务公告），具体见下表",
+          "page": "文章数，默认为 12"
         },
+        "description": "::: tip\n- type 可以从 URL 中的 columnId 获取。\n- 由于源站未提供精确时间，只能抓取日期粒度的时间。\n:::\n| 组织机构 | 工作职责 | 专业设置 | 教务信箱 | 名师风采 | 热点新闻 | 教务公告 | 教学新闻 | 教学管理 | 教务管理 | 学籍管理 | 实践教学 | 系统使用动画 | 教学管理 | 教务管理 | 学籍管理 | 实验教学 | 实践教学 | 教研论文教材认定 | 教学管理 | 学籍管理 | 实践教学 | 网络教学 | 多媒体教室管理 | 实验教学与实验室管理 | 教学成果 | 国创计划 | 学科竞赛 | 微专业 | 众创空间 | 示范基地 | 学生社团 |\n|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|--------------|----------|----------|----------|----------|----------|------------------|----------|----------|----------|----------|----------------|----------------------|----------|----------|----------|--------|----------|----------|----------|\n| 339      | 340      | 342      | 346      | 351      | 353      | 354      | 355      | 442      | 443      | 444      | 445      | 2106         | 2332     | 2333     | 2334     | 2335     | 2336     | 2730             | 2855     | 2857     | 2859     | 3271     | 3508           | 3519                 | 3981     | 4057     | 4058     | 4059   | 4060     | 4061     | 4062     |",
+        "categories": [
+          "university"
+        ],
         "features": {
           "requireConfig": false,
           "requirePuppeteer": false,
           "antiCrawler": false,
           "supportBT": false,
           "supportPodcast": false,
-          "supportScihub": false
+          "supportScihub": false,
+          "supportRadar": true
         },
-        "name": "教务处",
-        "maintainers": [
-          "LenaNouzen"
-        ],
-        "description": "| 名师风采 | 热点新闻 | 教务公告 | 教学新闻 |\n  | -------- | -------- | -------- | -------- |\n  | 351      | 353      | 354      | 355      |",
         "radar": [
           {
             "source": [
@@ -42437,6 +42750,7 @@
             "target": "/jwzx"
           }
         ],
+        "view": 5,
         "location": "jwzx.ts"
       },
       "/news/:category?": {
@@ -42448,24 +42762,78 @@
         ],
         "example": "/hrbust/news",
         "parameters": {
-          "category": "栏目标识，默认为理工要闻"
+          "category": "栏目标识，默认为 lgyw（理工要闻）"
         },
-        "description": "\n| lgyw | xwdd | zhenew | jxky | ycdt | xskc | jlhz | zsjy | djsz | zxbf | lgxb | mtlg | jzlt |\n| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |\n| 理工要闻 | 新闻导读 | 综合新闻 | 教学科研 | 院处动态 | 学术科创 | 交流合作 | 招生就业 | 党建思政 | 在线播放 | 理工校报 | 媒体理工 | 讲座论坛 |\n",
+        "description": "| 理工要闻 | 新闻导读 | 图文报道 | 综合新闻 | 教学科研 | 院处动态 | 学术科创 | 交流合作 | 学生天地 | 招生就业 | 党建思政 | 在线播放 | 理工人物 | 理工校报 | 媒体理工 | 讲座论坛 | 人才招聘 | 学科建设 |\n|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|\n| lgyw     | xwdd     | twbd     | zhenew   | jxky     | ycdt     | xskc     | jlhz     | xstd     | zsjy     | djsz     | zxbf     | lgrw     | lgxb     | mtlg     | jzlt     | rczp     | xkjs     |",
         "categories": [
           "university"
         ],
         "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false,
           "supportRadar": true
         },
         "radar": [
           {
             "source": [
               "news.hrbust.edu.cn/:category.htm"
-            ]
+            ],
+            "target": "/news/:category"
+          },
+          {
+            "source": [
+              "news.hrbust.edu.cn/"
+            ],
+            "target": "/news/"
           }
         ],
         "view": 5,
         "location": "news.ts"
+      },
+      "/nic/:category?": {
+        "path": "/nic/:category?",
+        "name": "网络信息中心",
+        "url": "nic.hrbust.edu.cn",
+        "maintainers": [
+          "cscnk52"
+        ],
+        "example": "/hrbust/nic",
+        "parameters": {
+          "category": "栏目标识，默认为 3988（新闻动态）"
+        },
+        "description": "| 服务指南 | 常见问题 | 新闻动态 | 通知公告 | 国家政策法规 | 学校规章制度 | 部门规章制度 | 宣传教育 | 安全法规 |\n|----------|----------|----------|----------|--------------|--------------|--------------|----------|----------|\n| 3982     | 3983     | 3988     | 3989     | 3990         | 3991         | 3992         | 3993     | 3994     |",
+        "categories": [
+          "university"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false,
+          "supportRadar": true
+        },
+        "radar": [
+          {
+            "source": [
+              "nic.hrbust.edu.cn/:category/list.htm"
+            ],
+            "target": "/nic/:category"
+          },
+          {
+            "source": [
+              "nic.hrbust.edu.cn/"
+            ],
+            "target": "/nic/"
+          }
+        ],
+        "view": 5,
+        "location": "nic.ts"
       }
     },
     "name": "哈尔滨理工大学",
@@ -49859,11 +50227,18 @@
           "supportPodcast": false,
           "supportScihub": false
         },
+        "radar": [
+          {
+            "source": [
+              "juejin.cn/:category"
+            ]
+          }
+        ],
         "name": "分类",
         "maintainers": [
           "DIYgod"
         ],
-        "description": "| 后端    | 前端     | Android | iOS | 人工智能 | 开发工具 | 代码人生 | 阅读    |\n  | ------- | -------- | ------- | --- | -------- | -------- | -------- | ------- |\n  | backend | frontend | android | ios | ai       | freebie  | career   | article |",
+        "description": "| 后端    | 前端     | Android | iOS | 人工智能 | 开发工具 | 代码人生 | 阅读    |\n| ------- | -------- | ------- | --- | -------- | -------- | -------- | ------- |\n| backend | frontend | android | ios | ai       | freebie  | career   | article |",
         "location": "category.ts"
       },
       "/collection/:collectionId": {
@@ -49892,9 +50267,41 @@
         ],
         "name": "单个收藏夹",
         "maintainers": [
-          "isQ"
+          "yang131323"
         ],
         "location": "collection.ts"
+      },
+      "/collections/:userId": {
+        "path": "/collections/:userId",
+        "categories": [
+          "programming"
+        ],
+        "example": "/juejin/collections/1697301682482439",
+        "parameters": {
+          "userId": "用户唯一标志符, 在浏览器地址栏URL中能够找到"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "juejin.cn/user/:id",
+              "juejin.cn/user/:id/collections"
+            ],
+            "target": "/collections/:id"
+          }
+        ],
+        "name": "收藏集",
+        "maintainers": [
+          "yang131323"
+        ],
+        "location": "collections.ts"
       },
       "/column/:id": {
         "path": "/column/:id",
@@ -49955,38 +50362,6 @@
           "CaoMeiYouRen"
         ],
         "location": "dynamic.ts"
-      },
-      "/collections/:userId": {
-        "path": "/collections/:userId",
-        "categories": [
-          "programming"
-        ],
-        "example": "/juejin/collections/1697301682482439",
-        "parameters": {
-          "userId": "用户唯一标志符, 在浏览器地址栏URL中能够找到"
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "juejin.cn/user/:id",
-              "juejin.cn/user/:id/collections"
-            ],
-            "target": "/collections/:id"
-          }
-        ],
-        "name": "收藏集",
-        "maintainers": [
-          "isQ"
-        ],
-        "location": "favorites.ts"
       },
       "/pins/:type?": {
         "path": "/pins/:type?",
@@ -52014,6 +52389,93 @@
     },
     "name": "旅法师营地",
     "url": "www.iyingdi.com",
+    "lang": "zh-CN"
+  },
+  "lhratings": {
+    "routes": {
+      "/research/:type?": {
+        "path": "/research/:type?",
+        "name": "研究报告",
+        "url": "www.lhratings.com",
+        "maintainers": [
+          "nczitzk"
+        ],
+        "example": "/lhratings/research/1",
+        "parameters": {
+          "type": "分类，默认为 `1`，即宏观经济，可在对应分类页 URL 中找到"
+        },
+        "description": ":::tip\n若订阅 [宏观经济](https://www.lhratings.com/research.html?type=1)，网址为 `https://www.lhratings.com/research.html?type=1`，请截取 `https://www.lhratings.com/research.html?type=` 到末尾的部分 `1` 作为 `type` 参数填入，此时目标路由为 [`/lhratings/research/1`](https://rsshub.app/lhratings/research/1)。\n:::\n\n| 宏观经济 | 债券市场 | 行业研究 | 评级理论与方法 | 国际债券市场与评级 | 评级表现 |\n| -------- | -------- | -------- | -------------- | ------------------ | -------- |\n| 1        | 2        | 3        | 4              | 5                  | 6        |\n",
+        "categories": [
+          "finance"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.lhratings.com/research.html"
+            ]
+          },
+          {
+            "title": "宏观经济",
+            "source": [
+              "www.lhratings.com/research.html?type=1"
+            ],
+            "target": "/research/1"
+          },
+          {
+            "title": "债券市场",
+            "source": [
+              "www.lhratings.com/research.html?type=2"
+            ],
+            "target": "/research/2"
+          },
+          {
+            "title": "行业研究",
+            "source": [
+              "www.lhratings.com/research.html?type=3"
+            ],
+            "target": "/research/3"
+          },
+          {
+            "title": "评级理论与方法",
+            "source": [
+              "www.lhratings.com/research.html?type=4"
+            ],
+            "target": "/research/4"
+          },
+          {
+            "title": "国际债券市场与评级",
+            "source": [
+              "www.lhratings.com/research.html?type=5"
+            ],
+            "target": "/research/5"
+          },
+          {
+            "title": "评级表现",
+            "source": [
+              "www.lhratings.com/research.html?type=6"
+            ],
+            "target": "/research/6"
+          }
+        ],
+        "view": 0,
+        "location": "research.ts"
+      }
+    },
+    "name": "联合资信评估股份有限公司",
+    "url": "lhratings.com",
+    "categories": [
+      "finance"
+    ],
+    "description": "",
     "lang": "zh-CN"
   },
   "lianxh": {
@@ -57878,7 +58340,6 @@
           "multimedia"
         ],
         "example": "/missav/new",
-        "parameters": {},
         "features": {
           "requireConfig": false,
           "requirePuppeteer": false,
@@ -57890,9 +58351,16 @@
         "radar": [
           {
             "source": [
-              "missav.com/dm397/new",
-              "missav.com/new",
-              "missav.com/"
+              "missav.ws/dm397/new",
+              "missav.ws/new",
+              "missav.ws/"
+            ]
+          },
+          {
+            "source": [
+              "missav.ai/dm397/new",
+              "missav.ai/new",
+              "missav.ai/"
             ]
           }
         ],
@@ -57900,12 +58368,12 @@
         "maintainers": [
           "TonyRL"
         ],
-        "url": "missav.com/dm397/new",
+        "url": "missav.ws/dm397/new",
         "location": "new.ts"
       }
     },
-    "name": "MissAV.com",
-    "url": "missav.com",
+    "name": "MissAV",
+    "url": "missav.ws",
     "lang": "en"
   },
   "misskey": {
@@ -65479,6 +65947,54 @@
         "view": 0,
         "location": "column.ts"
       },
+      "/event/:category?": {
+        "path": "/event/:category?",
+        "name": "活动",
+        "url": "www.oschina.net",
+        "maintainers": [
+          "nczitzk"
+        ],
+        "example": "/oschina/event",
+        "parameters": {
+          "category": "分类，默认为 `latest`，即最新活动，可在对应分类页 URL 中找到"
+        },
+        "description": ":::tip\n若订阅 [强力推荐](https://www.oschina.net/event?tab=recommend)，网址为 `https://www.oschina.net/event?tab=recommend`，请截取 `https://www.oschina.net/event?tab=` 到末尾的部分 `recommend` 作为 `category` 参数填入，此时目标路由为 [`/oschina/event/recommend`](https://rsshub.app/oschina/event/recommend)。\n:::\n\n| 强力推荐  | 最新活动 |\n| --------- | -------- |\n| recommend | latest   |\n",
+        "categories": [
+          "programming"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.oschina.net"
+            ]
+          },
+          {
+            "title": "强力推荐",
+            "source": [
+              "www.oschina.net"
+            ],
+            "target": "/event/recommend"
+          },
+          {
+            "title": "最新活动",
+            "source": [
+              "www.oschina.net"
+            ],
+            "target": "/event/latest"
+          }
+        ],
+        "view": 0,
+        "location": "event.ts"
+      },
       "/news/:category?": {
         "path": "/news/:category?",
         "categories": [
@@ -65642,6 +66158,41 @@
   },
   "osu": {
     "routes": {
+      "/latest-ranked/:routeParams?": {
+        "path": "/latest-ranked/:routeParams?",
+        "categories": [
+          "game"
+        ],
+        "example": "/osu/latest-ranked/includeMode=osu&difficultyLimit=L3&difficultyLimit=U7",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false,
+          "supportRadar": true
+        },
+        "parameters": {
+          "routeParams": {
+            "description": "Used to pass route parameters in Query String format. Check out route description for more info.",
+            "default": "null"
+          }
+        },
+        "name": "Latest Ranked Beatmap",
+        "description": "\nSubscribe to the new beatmaps on https://osu.ppy.sh/beatmapsets.\n\n#### Parameter Description\n\nParameters allows you to:\n\n- Filter game mode\n- Limit beatmap difficulty\n- Show/hide game mode in feed title\n\nBelow is a table of all allowed parameters passed to `routeParams`\n\n\n| Name              | Default  | Description                                                                                                                                                                                                                                          |\n| ----------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `includeMode`     | All mode | Could be `osu`, `mania`, `fruits` or `taiko`. Specify included game mode of beatmaps. Including this paramseter multiple times to specify multiple game modes, e.g.: `includeMode=osu&includeMode=mania`. Subscribe to all game modes if not specified |\n| `difficultyLimit` | None     | Lower/upper limit of star rating of the beatmaps in the beatmapset item, e.g.:`difficultyLimit=U6`. Checkout tips in descriptions for detailed explaination and examples.                                                                            |\n| `modeInTitle`     | `true`   | `true` or `false` Add mode info into feed title.\n\n\nThis actual parameters should be passed as `routeParams` in URL Query String format without `?`, e.g.:\n\n    /osu/latest-ranked/modeInTitle=true&includeMode=osu\n\n:::tip\nYou could make use of `difficultyLimit` paramters to create a \"high difficulty/low difficulty only\" only feed.\n\nFor example, if you only wants to play low star rating beatmap like 1 or 2 star, you could subscribe to:\n\n    /osu/latest-ranked/difficultyLimit=U2\n\nThis will filter out all beatmapsets that do not provide at least one beatmap with star rating<=`2.00`.\n\nSimilarly, you could use lower bound to filter out beatmapsets which don't have at least one beatmap\nwith star rating higher than a certain threshold.\n\n    /osu/latest-ranked/difficultyLimit=L6\n\nNow all beatmapsets that don't provided at least one beatmap with star rating higher than `6.00` will be filtered.\n:::\n",
+        "maintainers": [
+          "nfnfgo"
+        ],
+        "radar": [
+          {
+            "source": [
+              "osu.ppy.sh/beatmapsets"
+            ]
+          }
+        ],
+        "location": "beatmaps/latest-ranked.ts"
+      },
       "/packs/:type?": {
         "path": "/packs/:type?",
         "categories": [
@@ -66863,6 +67414,39 @@
     "name": "太平洋科技",
     "url": "pconline.com.cn",
     "description": "\n::: tip\n太平洋科技是专业IT门户网站,为用户和经销商提供IT资讯和行情报价,涉及电脑,手机,数码产品,软件等.\n:::",
+    "lang": "zh-CN"
+  },
+  "pencilnews": {
+    "routes": {
+      "/": {
+        "path": "/",
+        "categories": [
+          "new-media"
+        ],
+        "example": "/pencilnews",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "文章列表",
+        "maintainers": [
+          "defp"
+        ],
+        "description": "获取铅笔道最新文章",
+        "location": "index.ts"
+      }
+    },
+    "name": "铅笔道",
+    "url": "www.pencilnews.cn",
+    "categories": [
+      "new-media"
+    ],
+    "description": "铅笔道是一家专注于泛互联网领域的科技媒体",
     "lang": "zh-CN"
   },
   "penguin-random-house": {
@@ -70557,6 +71141,70 @@
         ],
         "location": "kg/user.ts"
       },
+      "/lol/news/:category?": {
+        "path": "/lol/news/:category?",
+        "name": "英雄联盟新闻",
+        "url": "lol.qq.com",
+        "maintainers": [
+          "nczitzk"
+        ],
+        "example": "/qq/lol/news",
+        "parameters": {
+          "category": "分类，默认为 `23`，即综合，见下表"
+        },
+        "description": ":::tip\n若订阅 [英雄联盟首页新闻列表 - 公告](https://lol.qq.com/news/index.shtml)，网址为 `https://lol.qq.com/news/index.shtml`，请选择 `24` 作为 `category` 参数填入，此时目标路由为 [`/qq/lol/news/24`](https://rsshub.app/qq/lol/news/24)。\n:::\n\n| 综合 | 公告 | 赛事 | 攻略 | 社区 |\n| ---- | ---- | ---- | ---- | ---- |\n| 23   | 24   | 25   | 27   | 28   |\n",
+        "categories": [
+          "game"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "title": "综合",
+            "source": [
+              "lol.qq.com/news/index.shtml"
+            ],
+            "target": "/lol/news/23"
+          },
+          {
+            "title": "公告",
+            "source": [
+              "lol.qq.com/news/index.shtml"
+            ],
+            "target": "/lol/news/24"
+          },
+          {
+            "title": "赛事",
+            "source": [
+              "lol.qq.com/news/index.shtml"
+            ],
+            "target": "/lol/news/25"
+          },
+          {
+            "title": "攻略",
+            "source": [
+              "lol.qq.com/news/index.shtml"
+            ],
+            "target": "/lol/news/27"
+          },
+          {
+            "title": "社区",
+            "source": [
+              "lol.qq.com/news/index.shtml"
+            ],
+            "target": "/lol/news/28"
+          }
+        ],
+        "view": 0,
+        "location": "lol/news.ts"
+      },
       "/pd/guild/:id/:sub?/:sort?": {
         "path": [
           "/pd/guild/:id/:sub?/:sort?"
@@ -70740,7 +71388,8 @@
         ],
         "name": "在线读刊",
         "maintainers": [
-          "TonyRL"
+          "TonyRL",
+          "cscnk52"
         ],
         "location": "magazine.ts"
       }
@@ -72373,7 +73022,8 @@
     "routes": {
       "/news": {
         "path": "/news",
-        "name": "软考最新动态",
+        "name": "软考动态",
+        "description": "**注意：** 官方网站限制了国外网络请求，可能需要通过部署在中国大陆内的 RSSHub 实例访问。",
         "maintainers": [
           "PrinOrange"
         ],
@@ -72383,7 +73033,7 @@
         "features": {
           "requireConfig": false,
           "requirePuppeteer": false,
-          "antiCrawler": false,
+          "antiCrawler": true,
           "supportBT": false,
           "supportPodcast": false,
           "supportScihub": false,
@@ -72391,7 +73041,7 @@
         },
         "radar": [
           {
-            "title": "软考新闻动态",
+            "title": "计算机职业技术资格考试（软考）动态",
             "source": [
               "www.ruankao.org.cn/index/work",
               "www.ruankao.org.cn"
@@ -73146,6 +73796,79 @@
     "name": "科学网",
     "url": "blog.sciencenet.cn",
     "lang": "zh-CN"
+  },
+  "scientificamerican": {
+    "routes": {
+      "/podcast/:id?": {
+        "path": "/podcast/:id?",
+        "name": "Podcasts",
+        "url": "www.scientificamerican.com",
+        "maintainers": [
+          "nczitzk"
+        ],
+        "example": "/scientificamerican/podcast",
+        "parameters": {
+          "id": "ID, see below"
+        },
+        "description": ":::tip\nIf you subscribe to [Science Quickly](https://www.scientificamerican.com/podcast/science-quickly/)，where the URL is `https://www.scientificamerican.com/podcast/science-quickly/`, extract the part `https://www.scientificamerican.com/podcast/` to the end, which is `science-quickly`, and use it as the parameter to fill in. Therefore, the route will be [`/scientificamerican/podcast/science-quickly`](https://rsshub.app/scientificamerican/podcast/science-quickly).\n:::\n\n| All | Science Quickly | Uncertain    |\n| --- | --------------- | ------------ |\n|     | science-quickly | science-talk |\n",
+        "categories": [
+          "new-media"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.scientificamerican.com/podcasts/",
+              "www.scientificamerican.com/podcast/:id"
+            ]
+          },
+          {
+            "title": "Science Quickly",
+            "source": [
+              "www.scientificamerican.com/podcast/science-quickly/"
+            ],
+            "target": "/podcast/science-quickly"
+          },
+          {
+            "title": "Uncertain",
+            "source": [
+              "www.scientificamerican.com/podcast/science-talk/"
+            ],
+            "target": "/podcast/science-talk"
+          }
+        ],
+        "view": 0,
+        "zh": {
+          "path": "/podcast/:id?",
+          "name": "Podcasts",
+          "url": "www.scientificamerican.com",
+          "maintainers": [
+            "nczitzk"
+          ],
+          "example": "/scientificamerican/podcast",
+          "parameters": {
+            "id": "ID，见下表"
+          },
+          "description": ":::tip\n若订阅 [Science Quickly](https://www.scientificamerican.com/podcast/science-quickly/)，网址为 `https://www.scientificamerican.com/podcast/science-quickly/`，请截取 `https://www.scientificamerican.com/podcast/` 到末尾 `/` 的部分 `science-quickly` 作为 `id` 参数填入，此时目标路由为 [`/scientificamerican/podcast/science-quickly`](https://rsshub.app/scientificamerican/podcast/science-quickly)。\n:::\n\n| 全部 | Science Quickly | Uncertain    |\n| ---- | --------------- | ------------ |\n|      | science-quickly | science-talk |\n"
+        },
+        "location": "podcast.ts"
+      }
+    },
+    "name": "Scientific American",
+    "url": "scientificamerican.com",
+    "categories": [
+      "new-media"
+    ],
+    "description": "Scientific American is the essential guide to the most awe-inspiring advances in science and technology, explaining how they change our understanding of the world and shape our lives.",
+    "lang": "en"
   },
   "scmp": {
     "routes": {
@@ -84997,10 +85720,7 @@
   "taoguba": {
     "routes": {
       "/blog/:id": {
-        "path": [
-          "/blog/:id",
-          "/user/:id"
-        ],
+        "path": "/blog/:id",
         "categories": [
           "finance"
         ],
@@ -85019,8 +85739,8 @@
         "radar": [
           {
             "source": [
-              "taoguba.com.cn/blog/:id",
-              "taoguba.com.cn/"
+              "tgb.cn/blog/:id",
+              "tgb.cn/"
             ]
           }
         ],
@@ -85029,59 +85749,17 @@
           "nczitzk"
         ],
         "location": "blog.ts"
-      },
-      "/user/:id": {
-        "path": [
-          "/blog/:id",
-          "/user/:id"
-        ],
-        "categories": [
-          "finance"
-        ],
-        "example": "/taoguba/blog/252069",
-        "parameters": {
-          "id": "博客 id，可在对应博客页中找到"
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "taoguba.com.cn/blog/:id",
-              "taoguba.com.cn/"
-            ]
-          }
-        ],
-        "name": "用户博客",
-        "maintainers": [
-          "nczitzk"
-        ],
-        "location": "blog.ts"
-      },
-      "/index": {
-        "path": [
-          "/index",
-          "/:category?"
-        ],
-        "name": "Unknown",
-        "maintainers": [
-          "nczitzk"
-        ],
-        "description": "| 淘股论坛 | 社区总版 | 精华加油 | 网友点赞 |\n  | -------- | -------- | -------- | -------- |\n  | bbs      | zongban  | jinghua  | dianzan  |",
-        "location": "index.ts"
       },
       "/:category?": {
-        "path": [
-          "/index",
-          "/:category?"
+        "path": "/:category?",
+        "categories": [
+          "finance"
         ],
-        "name": "Unknown",
+        "example": "/taoguba",
+        "parameters": {
+          "id": "分类，见下表，默认为社区总版"
+        },
+        "name": "淘股论坛",
         "maintainers": [
           "nczitzk"
         ],
@@ -85090,7 +85768,7 @@
       }
     },
     "name": "淘股吧",
-    "url": "taoguba.com.cn",
+    "url": "tgb.cn",
     "lang": "zh-CN"
   },
   "taptap": {
@@ -87638,6 +88316,44 @@
     "url": "www.tkww.hk",
     "lang": "zh-HK"
   },
+  "tmtpost": {
+    "routes": {
+      "/nictation": {
+        "path": "/nictation",
+        "categories": [
+          "new-media"
+        ],
+        "example": "/tmtpost/word",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": {
+          "source": [
+            "www.tmtpost.com"
+          ]
+        },
+        "name": "快报",
+        "maintainers": [
+          "defp"
+        ],
+        "url": "www.tmtpost.com/nictation",
+        "location": "nictation.ts"
+      }
+    },
+    "name": "钛媒体",
+    "url": "tmtpost.com",
+    "categories": [
+      "new-media"
+    ],
+    "description": "钛媒体是一家专注于新媒体领域的科技媒体",
+    "lang": "zh-CN"
+  },
   "tokeninsight": {
     "routes": {
       "/blog/:lang?": {
@@ -87767,6 +88483,36 @@
         "url": "bksy.tongji.edu.cn/",
         "location": "bks.ts"
       },
+      "/gs": {
+        "path": "/gs",
+        "categories": [
+          "university"
+        ],
+        "example": "/tongji/gs",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "gs.tongji.edu.cn/tzgg.htm",
+              "gs.tongji.edu.cn/"
+            ]
+          }
+        ],
+        "name": "研究生院通知公告",
+        "maintainers": [
+          "sitdownkevin"
+        ],
+        "url": "gs.tongji.edu.cn/tzgg.htm",
+        "location": "gs.ts"
+      },
       "/yjs": {
         "path": "/yjs",
         "categories": [
@@ -87790,9 +88536,10 @@
             ]
           }
         ],
-        "name": "研究生院通知公告",
+        "name": "研究生招生网通知公告",
         "maintainers": [
-          "shengmaosu"
+          "shengmaosu",
+          "sitdownkevin"
         ],
         "url": "yz.tongji.edu.cn/zsxw/ggtz.htm",
         "location": "yjs.ts"
@@ -88321,6 +89068,36 @@
   },
   "tsinghua": {
     "routes": {
+      "/lib/tzgg/:category": {
+        "path": "/lib/tzgg/:category",
+        "categories": [
+          "university"
+        ],
+        "example": "/tsinghua/lib/tzgg/qtkx",
+        "parameters": {
+          "category": "分类，可在对应分类页 URL 中找到"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "lib.tsinghua.edu.cn/tzgg/:category"
+            ]
+          }
+        ],
+        "name": "图书馆通知公告",
+        "maintainers": [
+          "linsenwang"
+        ],
+        "location": "lib/tzgg.ts"
+      },
       "/lib/zydt/:category?": {
         "path": "/lib/zydt/:category?",
         "name": "图书馆资源动态",
@@ -89051,6 +89828,45 @@
     "name": "報導者",
     "url": "twreporter.org",
     "lang": "zh-TW"
+  },
+  "txks": {
+    "routes": {
+      "/news": {
+        "path": "/news",
+        "name": "通信考试动态",
+        "description": "**注意：** 官方网站限制了国外网络请求，可能需要通过部署在中国大陆内的 RSSHub 实例访问。",
+        "maintainers": [
+          "PrinOrange"
+        ],
+        "categories": [
+          "study"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false,
+          "supportRadar": true
+        },
+        "radar": [
+          {
+            "title": "全国通信专业技术人员职业水平考试动态",
+            "source": [
+              "www.txks.org.cn/index/work",
+              "www.txks.org.cn"
+            ],
+            "target": "/news"
+          }
+        ],
+        "example": "/txks/news",
+        "location": "news.ts"
+      }
+    },
+    "name": "全国通信专业技术人员职业水平考试",
+    "url": "www.txks.org.cn",
+    "lang": "zh-CN"
   },
   "txrjy": {
     "routes": {
@@ -92603,34 +93419,6 @@
     "url": "www.washingtonpost.com",
     "lang": "en"
   },
-  "watasuke": {
-    "routes": {
-      "/blog": {
-        "path": "/blog",
-        "example": "/watasuke/blog",
-        "radar": [
-          {
-            "source": [
-              "watasuke.net/blog/",
-              "watasuke.net/"
-            ]
-          }
-        ],
-        "name": "Blog",
-        "maintainers": [
-          "honahuku"
-        ],
-        "url": "watasuke.net/blog/",
-        "location": "blog.ts"
-      }
-    },
-    "name": "Watasuke",
-    "url": "watasuke.net",
-    "categories": [
-      "blog"
-    ],
-    "lang": "ja"
-  },
   "wchscu": {
     "routes": {
       "/recruit": {
@@ -95969,6 +96757,42 @@
     "name": "厦门网",
     "url": "epaper.xmnn.cn",
     "lang": "zh-CN"
+  },
+  "xmu": {
+    "routes": {
+      "/kydt": {
+        "path": "/kydt",
+        "categories": [
+          "university"
+        ],
+        "example": "/xmu/kydt",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "soe.xmu.edu.cn/kxyj/kydt.htm"
+            ]
+          }
+        ],
+        "name": "科研动态",
+        "maintainers": [
+          "linsenwang"
+        ],
+        "location": "kydt.ts"
+      }
+    },
+    "name": "Xiamen University",
+    "url": "soe.xmu.edu.cn",
+    "zh": {
+      "name": "厦门大学经济学院"
+    }
   },
   "xmut": {
     "routes": {
