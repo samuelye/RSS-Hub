@@ -182,26 +182,8 @@
   "/4gamers/topic/:topic": [
     "bestpika"
   ],
-  "/4khd/category/:category": [
-    "AiraNadih"
-  ],
-  "/4khd/": [
-    "AiraNadih"
-  ],
   "/4ksj/:id?": [
     "nczitzk"
-  ],
-  "/4kup/category/:category": [
-    "AiraNadih"
-  ],
-  "/4kup/": [
-    "AiraNadih"
-  ],
-  "/4kup/popular/:period": [
-    "AiraNadih"
-  ],
-  "/4kup/tag/:tag": [
-    "AiraNadih"
   ],
   "/500px/tribe/set/:id": [
     "TonyRL"
@@ -234,14 +216,8 @@
   "/69shu/article/:id": [
     "eternasuno"
   ],
-  "/6park/index/:id?/:type?/:keyword?": [
-    "nczitzk",
-    "cscnk52"
-  ],
-  "/6park/news/:site?/:id?/:keyword?": [
-    "nczitzk",
-    "cscnk52"
-  ],
+  "/6park/:id?/:type?/:keyword?": [],
+  "/6park/news/:site?/:id?/:keyword?": [],
   "/6v123/latestMovies": [
     "tc9011"
   ],
@@ -1032,9 +1008,6 @@
   "/bse/:category?/:keyword?": [
     "nczitzk"
   ],
-  "/bsky/profile/:handle/feed/:space/:routeParams?": [
-    "FerrisChi"
-  ],
   "/bsky/keyword/:keyword": [
     "untitaker"
   ],
@@ -1061,15 +1034,6 @@
   ],
   "/buaa/news/:type": [
     "AlanDecode"
-  ],
-  "/buct/cist": [
-    "Epic-Creeper"
-  ],
-  "/buct/gr/:type": [
-    "Epic-Creeper"
-  ],
-  "/buct/jwc": [
-    "Epic-Creeper"
   ],
   "/bugzilla/bug/:site/:bugId": [
     "FranklinYu"
@@ -1283,9 +1247,6 @@
   ],
   "/cdzjryb/zw/projectList": [
     "TonyRL"
-  ],
-  "/ce/district/:category?": [
-    "cscnk52"
   ],
   "/cebbank/quotation/all": [
     "linbuxiao"
@@ -1587,9 +1548,11 @@
   "/coolapk/user/:uid/dynamic": [
     "xizeyoupan"
   ],
-  "/coomer/:source?/:id?": [
-    "nczitzk",
-    "AiraNadih"
+  "/coomer/artist/:id": [
+    "nczitzk"
+  ],
+  "/coomer/posts": [
+    "nczitzk"
   ],
   "/copernicium/:category?": [
     "dzx-dzx"
@@ -1598,18 +1561,6 @@
     "btdwv",
     "marvolo666",
     "yan12125"
-  ],
-  "/cosplaytele/category/:category": [
-    "AiraNadih"
-  ],
-  "/cosplaytele/": [
-    "AiraNadih"
-  ],
-  "/cosplaytele/popular/:period": [
-    "AiraNadih"
-  ],
-  "/cosplaytele/tag/:tag": [
-    "AiraNadih"
   ],
   "/counter-strike/news/:category?/:language?": [
     "nczitzk"
@@ -1693,8 +1644,7 @@
     "Ovler-Young"
   ],
   "/cursor/changelog": [
-    "p3psi-boo",
-    "nczitzk"
+    "p3psi-boo"
   ],
   "/cw/author/:channel": [
     "TonyRL"
@@ -2154,9 +2104,8 @@
   "/dykszx/news/:newsType?": [
     "zytomorrow"
   ],
-  "/dytt/:category{.+}?": [
-    "junfengP",
-    "nczitzk"
+  "/dytt/": [
+    "junfengP"
   ],
   "/e-hentai/:what?/:id?/:needTorrents?/:needImages?": [],
   "/eagle/blog/:cate?/:language?": [
@@ -2191,9 +2140,6 @@
   ],
   "/easynomad/": [
     "jiangsong216"
-  ],
-  "/ebc/realtime/:category?": [
-    "quiniapiezoelectricity"
   ],
   "/ecnu/acm/contest/:category?": [
     "a180285"
@@ -2609,9 +2555,6 @@
   ],
   "/gamme/:domain/:category?": [],
   "/gamme/:domain/tag/:tag": [],
-  "/gcores/articles": [
-    "nczitzk"
-  ],
   "/gcores/category/:category": [
     "MoguCloud",
     "StevenRCE0"
@@ -2619,18 +2562,11 @@
   "/gcores/collections/:collection": [
     "kudryavka1013"
   ],
-  "/gcores/news": [
-    "nczitzk"
-  ],
   "/gcores/radios/:category?": [
     "eternasuno"
   ],
-  "/gcores/tags/:id/:tab?": [
-    "StevenRCE0",
-    "nczitzk"
-  ],
-  "/gcores/videos": [
-    "nczitzk"
+  "/gcores/tag/:tag/:category?": [
+    "StevenRCE0"
   ],
   "/gdsrx/:id?": [],
   "/gdufs/news": [
@@ -3498,17 +3434,8 @@
   "/hrbeu/yjsy/list/:id": [
     "Derekmini"
   ],
-  "/hrbust/cs/:category?": [
-    "cscnk52"
-  ],
-  "/hrbust/gzc/:category?": [
-    "cscnk52"
-  ],
   "/hrbust/jwzx/:type?/:page?": [
     "LenaNouzen",
-    "cscnk52"
-  ],
-  "/hrbust/lib/:category?": [
     "cscnk52"
   ],
   "/hrbust/news/:category?": [
@@ -3809,15 +3736,8 @@
   "/investor/:category{.+}?": [
     "nczitzk"
   ],
-  "/iplaysoft/category/:slug": [
-    "cscnk52"
-  ],
   "/iplaysoft/": [
-    "williamgateszhao",
-    "cscnk52"
-  ],
-  "/iplaysoft/tag/:slug": [
-    "cscnk52"
+    "williamgateszhao"
   ],
   "/ippa/": [
     "cnkmmk"
@@ -4246,16 +4166,6 @@
   "/lala/": [
     "cnkmmk"
   ],
-  "/landiannews/category/:slug": [
-    "cscnk52"
-  ],
-  "/landiannews/": [
-    "nczitzk",
-    "cscnk52"
-  ],
-  "/landiannews/tag/:slug": [
-    "cscnk52"
-  ],
   "/lang/live/room/:id": [
     "MittWillson"
   ],
@@ -4519,9 +4429,6 @@
   "/manyvids/profile/vids/:uid": [
     "TonyRL"
   ],
-  "/mashiro/:lang": [
-    "MuenYu"
-  ],
   "/mastodon/account_id/:site/:account_id/statuses/:only_media?": [
     "notofoe",
     "pseudoyu"
@@ -4581,8 +4488,7 @@
     "nczitzk"
   ],
   "/meituan/tech": [
-    "ktKongTong",
-    "cscnk52"
+    "ktKongTong"
   ],
   "/metacritic/:type?/:sort?/:filter?": [],
   "/meteor/boards": [
@@ -4671,13 +4577,9 @@
   "/misskey/notes/featured/:site": [
     "Misaka13514"
   ],
-  "/misskey/timeline/home/:site/:routeParams?": [
-    "HanaokaYuzu"
-  ],
   "/misskey/users/notes/:username/:routeParams?": [
     "siygle",
-    "SnowAgar25",
-    "HanaokaYuzu"
+    "SnowAgar25"
   ],
   "/misskon/posts/:routeParams?": [
     "Urabartin"
@@ -4829,9 +4731,6 @@
   "/nautil/topic/:tid": [
     "emdoe"
   ],
-  "/nautiljon/releases/manga": [
-    "Fafnor"
-  ],
   "/nbd/daily": [
     "yuuow"
   ],
@@ -4872,7 +4771,7 @@
   "/neea/local/:type": [
     "SunShinenny"
   ],
-  "/neea/jlpt": [
+  "/neea/global/jlpt": [
     "nczitzk"
   ],
   "/nenu/sohac/*": [],
@@ -4944,8 +4843,7 @@
   ],
   "/nhk/news/:lang?": [
     "TonyRL",
-    "pseudoyu",
-    "cscnk52"
+    "pseudoyu"
   ],
   "/niaogebiji/cat/:cat": [
     "cKotoriKat"
@@ -5306,9 +5204,6 @@
   "/oilchem/:type?/:category?/:subCategory?": [
     "nczitzk"
   ],
-  "/okx/:section?": [
-    "lxl66566"
-  ],
   "/olevod/vod/:id": [
     "fang63625"
   ],
@@ -5465,7 +5360,7 @@
   "/panewslab/topic/:id": [
     "nczitzk"
   ],
-  "/papers/category/:id{.+}?": [
+  "/papers/arxiv/:category{.+}?": [
     "nczitzk",
     "Muyun99"
   ],
@@ -5535,10 +5430,9 @@
   "/pianyuan/indexers/pianyuan/results/search/api": [
     "jerry1119"
   ],
-  "/picnob/user/:id/:type?": [
+  "/picnob/user/:id": [
     "TonyRL",
-    "micheal-death",
-    "AiraNadih"
+    "micheal-death"
   ],
   "/picuki/profile/:id/:type?/:functionalFlag?": [
     "hoilc",
@@ -5731,36 +5625,6 @@
   "/pts/live/:id": [],
   "/pts/projects": [
     "nczitzk"
-  ],
-  "/publico/ciencias/:subsection?": [
-    "adrianrico97"
-  ],
-  "/publico/culturas/:subsection?": [
-    "adrianrico97"
-  ],
-  "/publico/economia/:subsection?": [
-    "adrianrico97"
-  ],
-  "/publico/internacional/:subsection?": [
-    "adrianrico97"
-  ],
-  "/publico/mujer/:subsection?": [
-    "adrianrico97"
-  ],
-  "/publico/opinion/:subsection?": [
-    "adrianrico97"
-  ],
-  "/publico/politica/:subsection?": [
-    "adrianrico97"
-  ],
-  "/publico/public": [
-    "adrianrico97"
-  ],
-  "/publico/sociedad/:subsection?": [
-    "adrianrico97"
-  ],
-  "/publico/tremending": [
-    "adrianrico97"
   ],
   "/pubmed/trending/:filters?": [
     "nczitzk"
@@ -6788,8 +6652,7 @@
     "qizidog"
   ],
   "/swjtu/scai/bks": [
-    "AzureG03",
-    "SuperJeason"
+    "AzureG03"
   ],
   "/swpu/bgw/:code": [
     "CYTMWIA"
@@ -7147,9 +7010,6 @@
   ],
   "/tkww/:column{.+}?": [
     "quiniapiezoelectricity"
-  ],
-  "/tmtpost/new": [
-    "nczitzk"
   ],
   "/tmtpost/nictation": [
     "defp"
@@ -7554,9 +7414,6 @@
   "/wabei/hot-recommend": [
     "p3psi-boo"
   ],
-  "/wainao/wainao-reads": [
-    "lucky13820"
-  ],
   "/wallhaven/search/:filter?/:needDetails?": [
     "nczitzk",
     "Fatpandac"
@@ -7700,9 +7557,11 @@
   "/wfu/news/:type?": [
     "cccht"
   ],
-  "/whitehouse/news/:category?": [
-    "nczitzk",
-    "hkamran80"
+  "/whitehouse/briefing-room/:category?": [
+    "nczitzk"
+  ],
+  "/whitehouse/ostp": [
+    "LyleLee"
   ],
   "/who/news-room/:category?/:language?": [
     "LogicJake",
@@ -7758,9 +7617,6 @@
   ],
   "/wnacg/tag/:tag": [
     "Gandum2077"
-  ],
-  "/wohnnet/:category/:region/*": [
-    "sk22"
   ],
   "/wordpress/:url?/:filter{.+}?": [
     "nczitzk"
@@ -8093,9 +7949,6 @@
   "/youku/channel/:channelId/:embed?": [
     "xyqfer",
     "Fatpandac"
-  ],
-  "/youmemark/:userid": [
-    "pseudoyu"
   ],
   "/youtube/channel/:id/:embed?": [
     "DIYgod"
