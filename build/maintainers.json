@@ -231,6 +231,9 @@
   "/5eplay/article": [
     "Dlouxgit"
   ],
+  "/5music/new-releases/:category?": [
+    "gideonsenku"
+  ],
   "/69shu/article/:id": [
     "eternasuno"
   ],
@@ -586,6 +589,12 @@
   ],
   "/artstation/:handle": [
     "TonyRL"
+  ],
+  "/asiafruitchina/categories/:category?": [
+    "nczitzk"
+  ],
+  "/asiafruitchina/news": [
+    "nczitzk"
   ],
   "/asianfanfics/tag/:tag/:type": [
     "KazooTTT"
@@ -1340,6 +1349,9 @@
   ],
   "/chaping/newsflash": [
     "Fatpandac"
+  ],
+  "/cherrytimes/market": [
+    "canonnizq"
   ],
   "/chiculture/topic/:category?": [
     "nczitzk"
@@ -2673,6 +2685,12 @@
     "StevenRCE0",
     "nczitzk"
   ],
+  "/gcores/topics/:id/recommend": [
+    "nczitzk"
+  ],
+  "/gcores/topics/recommend": [
+    "nczitzk"
+  ],
   "/gcores/videos": [
     "nczitzk"
   ],
@@ -2688,6 +2706,9 @@
   ],
   "/geekpark/:column?": [
     "nczitzk"
+  ],
+  "/gelbooru/post/:tags?/:quality?": [
+    "magicFeirl"
   ],
   "/gelonghui/home/:tag?": [
     "TonyRL"
@@ -3464,6 +3485,9 @@
   ],
   "/hko/weather": [
     "calpa"
+  ],
+  "/hkushop/vinyl/:cat?": [
+    "gideonsenku"
   ],
   "/hljucm/yjsy/:category?": [
     "nczitzk"
@@ -4280,6 +4304,9 @@
   ],
   "/kpmg/insights/:lang?": [
     "LogicJake"
+  ],
+  "/kpopping/news/:filter{.+}?": [
+    "nczitzk"
   ],
   "/ktown4u/artistBrandlist/:grpNo/:grpNo2?": [
     "JamesWDGu"
