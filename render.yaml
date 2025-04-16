@@ -11,7 +11,7 @@ services:
     # Render automatically injects REDIS_URL into connected services
 
   # Browserless Private Service (Internal access only)
-  - type: pserv
+  - type: worker
     name: browserless # Service name used for internal DNS
     runtime: image # Specify the runtime as Docker image
     image:
