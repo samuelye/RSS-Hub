@@ -30,9 +30,8 @@ services:
         value: production
       - key: CACHE_TYPE
         value: redis
-      # REDIS_URL is automatically injected by Render when connected to the 'redis' service
-      # - key: REDIS_URL
-      #   value: redis://redis:6379 # Manual override if needed, using redis service name
+      - key: REDIS_URL
+        value: redis://redis:6379 # Manual override if needed, using redis service name
       - key: PUPPETEER_WS_ENDPOINT
         value: ws://browserless:3000 # Internal URL for the browserless service
       - key: ZHIHU_COOKIES
