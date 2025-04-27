@@ -31,8 +31,21 @@ services:
       - key: CACHE_TYPE
         value: redis
       - key: REDIS_URL
-        value: redis://redis:6379 # Manual override if needed, using redis service name
+        fromDatabase:
+          name: redis # Name of the environment variable
+          property: connectionString
+        # value: redis://redis:6379 # Manual override if needed, using redis service name
       - key: PUPPETEER_WS_ENDPOINT
         value: ws://browserless:3000 # Internal URL for the browserless service
+      - key: PUPPETEER_HOST
+        fromService:
+          name: browserless # Name of the service
+          type: web # Type of the service
+          property: host # Use the service URL for Puppeteer
+      - key: PUPPETEER_PORT
+        fromService:
+          name: browserless # Name of the service
+          type: web # Type of the service
+          property: port # Use the service URL for Puppeteer
       - key: ZHIHU_COOKIES
         value: d_c0=oqGTKeBkSRqPTh12HpeVHTWnmMkrwcJ3L78=|1744381989;__zes_ck=004_Bea=rkgh/t8ObjmeoYOc0aXpDn0Mb7rpCYqxzYg2Cb3lvzED16Z7CapXHkHbdW1Dln9HrY3rK5Lbm32wguL5c=yJQ4=vB2PJbc0KrFkss0/cn2dC5CI2LjbLljx1us37-OGJuLru/3yp2L9/B91TK9hLqHKkvwCCMKq0qA4lkS0WqUX27GDJFnN6cUAjHMU4fhlDzB+tPVnsYFH1UpSudA9+5FhJ8w5KMsRUvYLX1PSQC99r9/Hfn+eFbALIH3Dw5;z_c0=2|1:0|10:1744569951|4:z_c0|92:Mi4xQnlSV0lBQUFBQUNpb1pNcDRHUkpHaVlBQUFCZ0FsVk5YMVRwYUFCM3d2WEZYM3FfTnM3MGV3TXhTOEsyZzVaV3NB|ae8eff9d36b3d8fa2f5c32c93b92787450c447763af281a16cce48002cfe0b6c
