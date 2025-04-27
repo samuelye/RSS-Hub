@@ -31,8 +31,9 @@ services:
       - key: CACHE_TYPE
         value: redis
       - key: REDIS_URL
-        fromDatabase:
+        fromService:
           name: redis # Name of the environment variable
+          type: redis # Type of the service
           property: connectionString
         # value: redis://redis:6379 # Manual override if needed, using redis service name
       - key: PUPPETEER_WS_ENDPOINT
